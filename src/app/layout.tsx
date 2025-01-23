@@ -1,5 +1,6 @@
+import '@/styles/reset.css';
+import localFont from 'next/font/local';
 import type { Metadata } from 'next';
-import ClientProvider from './ClientProvider';
 export const metadata: Metadata = {
   title: 'HeyB - 나만의 취미를 발견하고 즐기는 플랫폼',
   description:
@@ -20,7 +21,6 @@ export const metadata: Metadata = {
     '성장',
   ],
   // authors: [{ name: "HeyB Team", url: "https://www.heyb.com" }],
-  themeColor: '#A3DAD1',
   openGraph: {
     title: 'HeyB - 나만의 취미를 발견하고 즐기는 플랫폼',
     description:
@@ -40,16 +40,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const pretendard = localFont({
+  src: '../../public/fonts/pretendard/PretendardVariable.woff2', // 폰트 경로
+  variable: '--font-pretendard', // CSS 변수로 폰트 정의
+});
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko">
-      <body>
-        <ClientProvider>{children}</ClientProvider>
-      </body>
+    <html lang="ko" className={pretendard.variable}>
+      <body>{children}</body>
     </html>
   );
 }
