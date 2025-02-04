@@ -1,6 +1,7 @@
 import '@/styles/reset.css';
-import localFont from 'next/font/local';
 import type { Metadata } from 'next';
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+
 export const metadata: Metadata = {
   title: 'HeyB - 나만의 취미를 발견하고 즐기는 플랫폼',
   description:
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'HeyB - 나만의 취미를 발견하고 즐기는 플랫폼',
     description:
-      '체험 키트와 함께 새로운 취미를 시작하고, 취미 경험을 공유하며 즐거움을 나누세요. HeyB는 당신의 취미 여정을 응원합니다!',
+      'HeyB에서 나만의 취미를 찾아보세요. 체험 키트로 시작하고, 경험을 공유하며 즐거움을 나눌 수 있는 취미 플랫폼! 취미를 탐색하고, 나누고, 성장하세요.',
     // url: "https://www.heyb.com",
     siteName: 'HeyB',
     locale: 'ko_KR',
@@ -40,14 +41,14 @@ export const metadata: Metadata = {
   },
 };
 
-const pretendard = localFont({
-  src: '../../public/fonts/pretendard/PretendardVariable.woff2', // 폰트 경로
-  variable: '--font-pretendard', // CSS 변수로 폰트 정의
-});
+// const pretendard = localFont({
+//   src: '../../public/fonts/pretendard/PretendardVariable.woff2',
+//   variable: '--font-pretendard',
+// });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={pretendard.variable}>
+    <html lang="ko">
       <body>{children}</body>
     </html>
   );
