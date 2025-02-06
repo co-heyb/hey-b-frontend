@@ -1,5 +1,6 @@
-import { globalFontFace, globalStyle } from '@vanilla-extract/css';
+import { createVar, globalFontFace, globalStyle } from '@vanilla-extract/css';
 import { createGlobalTheme } from '@vanilla-extract/css';
+import { hexToRgb } from './hexToRgb.css';
 
 // Pretendard 폰트 등록
 globalFontFace('Pretendard', {
@@ -17,15 +18,13 @@ globalStyle('body', {
   lineHeight: '1.5',
 });
 
-// 📌 전역 테마 정의 (Global Theme)
-export const vars = createGlobalTheme(':root', {
+export const theme = {
   colors: {
     mint: '#A3DAD1', // 메인 배경 및 주요 영역, CTA
     coral: '#DE542C', // CTA, 경고, 강조 텍스트
     softYellow: '#F3E5AB', // 서브 배경 및 강조 섹션
-
-    darkCharcoal: '#3B4A57', // 주요 텍스트
-    charcoal: '#4E5D6C', // 보조 텍스트
+    darkCharcoal: '#303C47', // 주요 텍스트
+    charcoal: '#5A6A7C', // 보조 텍스트
     white: '#FFFFFF',
     black: '#000000',
 
@@ -46,4 +45,9 @@ export const vars = createGlobalTheme(':root', {
     medium: '8px',
     large: '16px',
   },
-});
+};
+
+// 📌 전역 테마 정의 (Global Theme)
+export const vars = createGlobalTheme(':root', theme);
+// RGB 변수를 생성하여 `hexToRgb` 변환 후 저장
+export const darkCharcoalRgb = createVar();
