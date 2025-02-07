@@ -32,7 +32,7 @@ const buttonVariants = {
       background: vars.colors.darkCharcoal,
       color: vars.colors.white,
 
-      ['&:active, &:focus']: {
+      ['&:hover, &:active, &:focus']: {
         background: vars.colors.charcoal,
       },
 
@@ -46,7 +46,7 @@ const buttonVariants = {
       borderColor: vars.colors.darkCharcoal,
       color: vars.colors.darkCharcoal,
 
-      ['&:active, &:focus']: {
+      ['&:hover, &:active, &:focus']: {
         color: vars.colors.charcoal,
         borderColor: vars.colors.charcoal,
       },
@@ -61,7 +61,7 @@ const buttonVariants = {
       color: vars.colors.charcoal,
       padding: 0,
 
-      ['&:active, &:focus']: {
+      ['&:hover, &:active, &:focus']: {
         color: `rgba(${hexToRgb(theme.colors.darkCharcoal)}, 0.5)`,
       },
 
@@ -75,7 +75,7 @@ const buttonVariants = {
       textDecoration: 'underline',
       padding: 0,
 
-      ['&:active, &:focus']: {
+      ['&:hover, &:active, &:focus']: {
         color: `rgba(${hexToRgb(theme.colors.darkCharcoal)}, 0.5)`,
       },
 
@@ -89,7 +89,7 @@ const buttonVariants = {
     mint: {
       background: vars.colors.mint,
       color: vars.colors.darkCharcoal,
-      ['&:active, &:focus']: {
+      ['&:hover, &:active, &:focus']: {
         background: `rgba(${hexToRgb(theme.colors.mint)}, 0.8)`,
         color: `rgba(${hexToRgb(theme.colors.darkCharcoal)}, 0.8)`,
       },
@@ -97,7 +97,7 @@ const buttonVariants = {
     coral: {
       background: vars.colors.coral,
       color: vars.colors.white,
-      ['&:active, &:focus']: {
+      ['&:hover, &:active, &:focus']: {
         color: vars.colors.white,
         background: `rgba(${hexToRgb(theme.colors.coral)}, 0.8)`,
       },

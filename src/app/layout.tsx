@@ -1,6 +1,10 @@
+import Footer from '@/components/\bFooter';
+import Header from '@/components/Header';
+import TabBar from '@/components/TabBar';
 import '@/styles/reset.css';
 import type { Metadata } from 'next';
 import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+import { container } from './layout.css';
 
 export const metadata: Metadata = {
   title: 'HeyB - 나만의 취미를 발견하고 즐기는 플랫폼',
@@ -49,7 +53,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body>
+        {' '}
+        <div className={container}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <TabBar />
+        </div>
+      </body>
     </html>
   );
 }
