@@ -50,11 +50,10 @@ export const metadata: Metadata = {
 //   variable: '--font-pretendard',
 // });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="ko">
       <body>
-        {' '}
         <div className={container}>
           <Header />
           <main>{children}</main>

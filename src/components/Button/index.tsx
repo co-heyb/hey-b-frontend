@@ -1,3 +1,4 @@
+import { ButtonHTMLAttributes } from 'react';
 import { button, ButtonVariants } from './Button.css';
 
 type ButtonTypes = NonNullable<ButtonVariants>;
@@ -16,7 +17,7 @@ const Button = ({
   colorFill,
   children,
   ...props
-}: { children: React.ReactNode } & ButtonProps) => {
+}: React.PropsWithChildren<ButtonProps> & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <>
       <button className={button({ style, size, radius, colorFill })} {...props}>

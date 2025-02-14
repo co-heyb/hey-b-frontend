@@ -18,7 +18,7 @@ export const tabItem = styleVariants({
     gap: pxToVw(8),
     height: '100%',
     fontSize: pxToVw(12),
-    fontWeight: 'bold',
+    fontWeight: 600,
     color: vars.colors.darkCharcoal,
     textDecoration: 'none',
     transition: 'color 0.2s ease-in-out',

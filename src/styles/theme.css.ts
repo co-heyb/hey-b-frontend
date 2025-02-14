@@ -28,25 +28,20 @@ export const theme = {
     softYellow: '#F3E5AB', // 서브 배경 및 강조 섹션
     darkCharcoal: '#303C47', // 주요 텍스트
     charcoal: '#5A6A7C', // 보조 텍스트
-    white: '#FFFFFF',
-    black: '#000000',
+    lightCharcoal: '#B6BABC', // 비활성화, border등
     lightYellow: '#FFF8B3', // 카드 배경
     softMint: '#78C6C4', // 버튼 호버, 강조된 배경
     lightMint: '#B7D3D2', // 탐색 페이지 배경
     beige: '#EDC7B7', // 강조 배경
+    background: '#F3F4F6',
+    white: '#FFFFFF',
+    black: '#000000',
   },
   colorFilter: {
     blackToDarkCharcoal: 'brightness(0.4) contrast(1.2) grayscale(1)',
     blackToMint: 'invert(82%) sepia(18%) saturate(270%) hue-rotate(126deg)',
     blackToActiveMint: 'invert(68%) sepia(28%) saturate(310%) hue-rotate(136deg) brightness(94%) contrast(97%)',
     blackToCoral: 'invert(62%) sepia(50%) saturate(410%) hue-rotate(-6deg) contrast(103%)',
-  },
-  spacing: {
-    none: '0px',
-    small: '8px',
-    medium: '16px',
-    large: '24px',
-    extraLarge: '32px',
   },
   borderRadius: {
     small: '4px',

@@ -11,9 +11,16 @@ globalStyle('html, body', {
   height: '100%',
   fontSize: '16px',
   lineHeight: 1.5,
-  fontFamily: `'Pretendard', Arial, sans-serif`,
+  fontFamily: `'Pretendard',  -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+      'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif`,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
+});
+globalStyle('input:placeholder', {
+  fontFamily: `'Pretendard',  -apple-system, BlinkMacSystemFont, system-ui, Roboto,
+      'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
+      'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif`,
 });
 
 globalStyle('body', {

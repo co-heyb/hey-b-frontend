@@ -7,8 +7,8 @@ import { hexToRgb } from '@/styles/hexToRgb.css';
 const buttonBase = {
   border: `1px solid transparent`,
   borderRadius: pxToVw(6),
-  padding: pxToVw(vars.spacing.small),
-  fontWeight: 'bold',
+  padding: pxToVw(8),
+  fontWeight: 600,
 };
 
 const buttonVariants = {

@@ -7,7 +7,7 @@ export const header = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   height: pxToVw(50),
-  padding: pxToVw(vars.spacing.medium),
+  padding: pxToVw(16),
 });
 
 export const logo = style({
@@ -30,5 +30,5 @@ export const headerHidden = style({
 
 export const headerIcons = style({
   display: 'flex',
-  gap: pxToVw(vars.spacing.small),
+  gap: pxToVw(8),
 });
