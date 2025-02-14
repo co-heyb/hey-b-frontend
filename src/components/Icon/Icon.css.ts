@@ -1,8 +1,8 @@
 import { pxToVw } from '@/styles/px-to-vw.css';
 import { vars } from '@/styles/theme.css';
-import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
+import { style, styleVariants } from '@vanilla-extract/css';
 
-const IconVariants = {
+export const IconVariants = {
   size: {
     small: { width: pxToVw(16), height: pxToVw(16) },
     medium: {
@@ -23,18 +23,17 @@ const IconVariants = {
     },
   },
 };
-export const Icon = recipe({
-  base: {
-    selectors: {
-      ['a:hover &, a:active &, a:focus &,button:hover &, button:active &, button:focus &']: {
-        filter: vars.colorFilter.blackToMint,
-      },
+
+export const Icon = style({
+  selectors: {
+    ['a:hover &, a:active &, a:focus &,button:hover &, button:active &, button:focus &']: {
+      filter: vars.colorFilter.blackToMint,
     },
   },
-  variants: IconVariants,
-  defaultVariants: {
-    size: 'medium',
-    active: false,
-  },
 });
-export type IconVariants = RecipeVariants<typeof Icon>;
+export const IconSize = styleVariants({
+  ...IconVariants.size,
+});
+export const IconActive = styleVariants({
+  ...IconVariants.active,
+});
