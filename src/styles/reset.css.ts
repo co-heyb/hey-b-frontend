@@ -1,4 +1,6 @@
 import { globalStyle } from '@vanilla-extract/css';
+import { hexToRgb } from './hexToRgb.css';
+import { vars } from './theme.css';
 
 // Reset 기본 스타일
 globalStyle('*, *::before, *::after', {
@@ -39,13 +41,42 @@ globalStyle('ul, ol', {
 
 globalStyle('a', {
   textDecoration: 'none',
-  color: 'inherit',
+  display: 'inline-block',
 });
 
-globalStyle('button', {
-  all: 'unset', // 모든 버튼 스타일 초기화
-  fontFamily: 'inherit',
+globalStyle('button, a', {
+  WebkitTapHighlightColor: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.1)`,
+});
+
+globalStyle('button, a, input[type="submit"], input[type="reset"]', {
+  background: 'none',
+  color: 'inherit',
+  border: 'none',
+  padding: 0,
+  font: 'inherit',
   cursor: 'pointer',
+  appearance: 'none',
+  WebkitAppearance: 'none',
+  outline: 'none',
+});
+
+globalStyle(
+  'button:focus-visible, a:focus-visible, input[type="submit"]:focus-visible, input[type="reset"]:focus-visible',
+  {
+    outline: `2px solid ${vars.colors.mint}`,
+    outlineOffset: '2px',
+    borderRadius: '4px',
+  },
+);
+
+globalStyle('button:focus:not(:focus-visible), a:focus:not(:focus-visible), input:focus:not(:focus-visible)', {
+  outline: 'none',
+});
+
+globalStyle('button:disabled, input[type="submit"]:disabled, input[type="reset"]:disabled', {
+  cursor: 'not-allowed',
+  opacity: 0.6,
+  background: vars.colors.lightCharcoal,
 });
 
 globalStyle('img, video', {

@@ -11,7 +11,6 @@ export const header = style({
 });
 
 export const logo = style({
-  display: 'inline-block',
   width: pxToVw(45),
   height: pxToVw(28),
   backgroundImage: "url('/images/logo.svg?v=1.0.0')",

@@ -24,13 +24,7 @@ export const IconVariants = {
   },
 };
 
-export const Icon = style({
-  selectors: {
-    ['a:hover &, a:active &, a:focus &,button:hover &, button:active &, button:focus &']: {
-      filter: vars.colorFilter.blackToMint,
-    },
-  },
-});
+export const Icon = style({});
 export const IconSize = styleVariants({
   ...IconVariants.size,
 });

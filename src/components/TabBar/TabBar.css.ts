@@ -24,8 +24,8 @@ export const tabItem = styleVariants({
     transition: 'color 0.2s ease-in-out',
   },
   active: {
-    // color: vars.colors.mint,
     color: vars.colors.activeMint,
+    fontWeight: 700,
   },
 });
 
@@ -35,9 +35,6 @@ export const tabItemLink = style({
   alignItems: 'center',
   justifyContent: 'center',
   flex: 1,
-  selectors: {
-    ['&:hover, &:active, &:focus']: {
-      color: vars.colors.mint,
-    },
-  },
+  color: 'inherit',
+  fontWeight: 'inherit',
 });
