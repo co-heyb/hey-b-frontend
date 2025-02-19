@@ -2,14 +2,14 @@ import { pxToVw } from '@/styles/px-to-vw.css';
 import { vars } from '@/styles/theme.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
-export const IconVariants = {
+export const iconVariants = {
   size: {
     small: { width: pxToVw(16), height: pxToVw(16) },
     medium: {
       width: pxToVw(24),
       height: pxToVw(24),
     },
-    large: {},
+    large: { width: pxToVw(30), height: pxToVw(30) },
   },
   active: {
     true: {
@@ -24,10 +24,10 @@ export const IconVariants = {
   },
 };
 
-export const Icon = style({});
-export const IconSize = styleVariants({
-  ...IconVariants.size,
+export const icon = style({});
+export const iconSize = styleVariants({
+  ...iconVariants.size,
 });
-export const IconActive = styleVariants({
-  ...IconVariants.active,
+export const iconActive = styleVariants({
+  ...iconVariants.active,
 });

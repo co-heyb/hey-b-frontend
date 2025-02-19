@@ -30,7 +30,7 @@ globalStyle('body', {
   flexDirection: 'column',
   minHeight: '100vh',
   backgroundColor: '#FFFFFF',
-  color: '#333333',
+  color: vars.colors.darkCharcoal,
 });
 
 globalStyle('ul, ol', {

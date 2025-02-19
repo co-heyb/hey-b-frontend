@@ -4,6 +4,10 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 import { hexToRgb } from '@/styles/hexToRgb.css';
 
 const buttonBase = {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  gap: pxToVw(4),
   border: `1px solid transparent`,
   borderRadius: pxToVw(6),
   padding: pxToVw(8),
@@ -18,6 +22,7 @@ const buttonVariants = {
     large: { padding: pxToVw([10, 22]), borderRadius: pxToVw(10), fontSize: pxToVw(16) },
     extraLarge: { padding: pxToVw([12, 22]), borderRadius: pxToVw(10), fontSize: pxToVw(18) },
   },
+  wide: { true: { width: '100%', flexShrink: 0 } },
   radius: {
     rect: {
       borderRadius: 0,

@@ -3,24 +3,27 @@ import { button, ButtonVariants } from './Button.css';
 
 type ButtonTypes = NonNullable<ButtonVariants>;
 
-type ButtonProps = {
+export type ButtonProps = {
   style?: ButtonTypes['style'];
   size?: ButtonTypes['size'];
+  wide?: ButtonTypes['wide'];
   radius?: ButtonTypes['radius'];
   colorFill?: ButtonTypes['colorFill'];
 };
 
 const Button = ({
+  children,
   style,
   size,
+  wide,
   radius,
   colorFill,
-  children,
+  className,
   ...props
 }: React.PropsWithChildren<ButtonProps> & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <>
-      <button className={button({ style, size, radius, colorFill })} {...props}>
+      <button className={`${button({ style, size, wide, radius, colorFill })} ${className}`} {...props}>
         {children}
       </button>
     </>

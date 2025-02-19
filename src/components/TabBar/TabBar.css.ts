@@ -1,7 +1,6 @@
 import { pxToVw } from '@/styles/px-to-vw.css';
 import { vars } from '@/styles/theme.css';
-import { globalStyle, style, styleVariants } from '@vanilla-extract/css';
-import { recipe } from '@vanilla-extract/recipes';
+import { style, styleVariants } from '@vanilla-extract/css';
 
 export const tabList = style({
   display: 'flex',
