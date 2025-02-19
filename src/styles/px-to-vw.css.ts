@@ -1,6 +1,5 @@
 const BASE_WIDTH = 360; // Figma 기준 디자인 해상도
-const BASE_FONT_SIZE = 16; // 기본 폰트 크기
-
+const isStorybook = process.env.STORYBOOK === 'true';
 /**
  * px → vw 변환 함수
  * @param value - px 값 (공백으로 구분된 다중 값 지원)
@@ -10,7 +9,9 @@ export const pxToVw = (value: number | string | (number | string)[], baseWidth: 
   if (Array.isArray(value)) {
     return value.map((v) => pxToVw(v, baseWidth)).join(' ');
   }
-
+  if (isStorybook) {
+    return `${value}px`; // ✅ Storybook에서는 px로 유지
+  }
   if (typeof value === 'number') {
     return `calc(${value} * 100 / ${baseWidth} * 1vw)`;
   }

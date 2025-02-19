@@ -1,4 +1,15 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"],
-  "react/no-unknown-property": ["error", { "ignore": ["css"] }]
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:storybook/recommended"
+  ],
+  "react/no-unknown-property": [
+    "error",
+    {
+      "ignore": [
+        "css"
+      ]
+    }
+  ]
 }

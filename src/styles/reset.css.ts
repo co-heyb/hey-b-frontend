@@ -1,6 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { hexToRgb } from './hexToRgb.css';
 import { vars } from './theme.css';
+import { pxToVw } from './px-to-vw.css';
 
 // Reset 기본 스타일
 globalStyle('*, *::before, *::after', {
@@ -11,7 +12,7 @@ globalStyle('*, *::before, *::after', {
 
 globalStyle('html, body', {
   height: '100%',
-  fontSize: '16px',
+  fontSize: pxToVw(12),
   lineHeight: 1.5,
   fontFamily: `'Pretendard',  -apple-system, BlinkMacSystemFont, system-ui, Roboto,
       'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',

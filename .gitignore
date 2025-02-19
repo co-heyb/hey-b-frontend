@@ -71,3 +71,4 @@ storybook-static/
 .pnp.js
 .pnp.cjs
 .pnp.loader.js
+*storybook.log
