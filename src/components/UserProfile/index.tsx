@@ -6,6 +6,7 @@ import { UserProfileFollowBtn } from './UserProfileFollowBtn';
 import { userType } from '@/types';
 import { setChildrenWithProps } from '@/lib/utils/setChildrenWithProps';
 import { UserProfileWrap } from './UserProfileWrap';
+import UserProfileLink from './UserProfileLink';
 
 export type UserProfileProps = {
   type?: userType.UserProfileType;
@@ -16,6 +17,7 @@ export const UserProfile = ({ type = 'list', children }: PropsWithChildren<UserP
 };
 
 UserProfile.Wrap = UserProfileWrap;
+UserProfile.Link = UserProfileLink;
 UserProfile.Img = UserProfileImg;
 UserProfile.Name = UserProfileName;
 UserProfile.FollowBtn = UserProfileFollowBtn;

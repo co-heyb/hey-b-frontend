@@ -13,10 +13,10 @@ const Header = () => {
         </Link>
       </h1>
       <div className={headerIcons}>
-        <Button style="plane">
+        <Button style="plain">
           <Icon src={'/icons/notification.svg'} width={24} height={24} alt={'알림'} />
         </Button>
-        <Button style="plane">
+        <Button style="plain">
           <Icon src={'/icons/search.svg'} width={24} height={24} alt={'검색하기'} />
         </Button>
       </div>

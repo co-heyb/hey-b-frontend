@@ -13,7 +13,7 @@ const TabItem = React.memo(
     return (
       <li className={`${styles.tabItem.default} ${isActive ? styles.tabItem.active : ''}`}>
         <Link href={href} className={styles.tabItemLink}>
-          <Icon src={src} width={24} height={24} alt={alt} active={isActive} />
+          <Icon src={src} width={24} height={24} alt={alt} colorFill={isActive ? 'mint' : 'darkCharcoal'} />
           <span>{label}</span>
         </Link>
       </li>

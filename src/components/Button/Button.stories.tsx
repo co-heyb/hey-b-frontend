@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from '.';
 import Icon from '../Icon';
-import { style } from '@vanilla-extract/css';
 
 const meta: Meta<typeof Button> = {
   title: 'components/Button',
   component: Button,
+  parameters: {
+    layout: 'centered',
+  },
   tags: ['autodocs'],
   argTypes: {
     size: {
@@ -21,7 +23,7 @@ const meta: Meta<typeof Button> = {
     },
     style: {
       control: 'select',
-      options: ['filled', 'outline', 'plane', 'underline'],
+      options: ['filled', 'outline', 'plain', 'plainRect', 'underline'],
       description: '버튼의 스타일을 설정합니다. 기본값은 `filled`입니다.',
     },
     colorFill: {
@@ -89,13 +91,14 @@ export const Style: StoryObj<typeof Button> = {
         <Button {...args} style="filled"></Button>
         <Button {...args} style="outline"></Button>
         <Button {...args} style="underline"></Button>
-        <Button {...args} style="plane"></Button>
+        <Button {...args} style="plain"></Button>
+        <Button {...args} style="plainRect"></Button>
       </div>
     );
   },
 };
 
-export const CollorFil: StoryObj<typeof Button> = {
+export const ColorFill: StoryObj<typeof Button> = {
   args: {
     size: 'small',
     children: 'text',
@@ -122,7 +125,8 @@ export const StyleDisabled: StoryObj<typeof Button> = {
         <Button {...args} style="filled" disabled></Button>
         <Button {...args} style="outline" disabled></Button>
         <Button {...args} style="underline" disabled></Button>
-        <Button {...args} style="plane" disabled></Button>
+        <Button {...args} style="plain" disabled></Button>
+        <Button {...args} style="plainRect" disabled></Button>
       </div>
     );
   },
@@ -141,7 +145,8 @@ export const IconButton: StoryObj<typeof Button> = {
           <Icon src={'/icons/share.svg'} alt={'image.alt'} colorFill="white" />
         </Button>
         <Button {...args} style="outline"></Button>
-        <Button {...args} style="plane"></Button>
+        <Button {...args} style="plain"></Button>
+        <Button {...args} style="plainRect"></Button>
       </div>
     );
   },

@@ -58,13 +58,23 @@ const buttonVariants = {
         borderColor: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.1)`,
       },
     },
-    plane: {
+    plain: {
       background: vars.colors.white,
       color: vars.colors.charcoal,
       padding: 0,
 
       ['&:disabled']: {
         color: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.3)`,
+      },
+    },
+    plainRect: {
+      background: vars.colors.white,
+      padding: pxToVw(6),
+      ['&::before']: {
+        content: '""',
+        display: 'block',
+        paddingTop: '100%',
+        marginLeft: pxToVw(-4),
       },
     },
     underline: {

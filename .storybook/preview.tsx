@@ -20,7 +20,6 @@ const preview: Preview = {
         layout: 'padded',
       },
     },
-    layout: 'centered',
   },
 };
 

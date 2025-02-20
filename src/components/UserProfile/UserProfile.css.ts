@@ -16,6 +16,10 @@ export const userProfile = styleVariants({
   profile: {},
 });
 
+export const userProfileLinkBase = style({
+  display: 'flex',
+});
+
 export const userProfileImgBase = style({ borderRadius: '50%', border: `1px solid ${vars.colors.charcoal}` });
 export const userProfileImg = styleVariants({
   list: { width: pxToVw(30), height: pxToVw(30) },
@@ -26,6 +30,7 @@ export const userProfileImg = styleVariants({
 
 export const userProfileNameBase = style({
   display: 'flex',
+  alignItems: 'center',
   fontWeight: 500,
   selectors: {
     [`${userProfileImgBase} + &`]: {

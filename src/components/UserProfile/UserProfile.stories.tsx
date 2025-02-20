@@ -1,0 +1,94 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import Button from '../Button';
+import Icon from '../Icon';
+import UserProfile from '.';
+import Link from 'next/link';
+
+const meta: Meta<typeof UserProfile> = {
+  title: 'components/UserProfile',
+  component: UserProfile,
+  tags: ['autodocs'],
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['list', 'detail', 'comment', 'profile'],
+      description:
+        'UserProfile의 타입을 결정합니다. UserProfile 컴포넌트는 `list`, `detail`, `comment`, `profile` 네 가지 타입을 지원합니다.',
+    },
+  },
+};
+export default meta;
+
+type Story = StoryObj<typeof UserProfile>;
+
+export const List: Story = {
+  args: {
+    type: 'list',
+  },
+  render: (args) => (
+    <UserProfile {...args}>
+      <UserProfile.Wrap>
+        <UserProfile.Link href={'/'}>
+          <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
+          <UserProfile.Name>delay</UserProfile.Name>
+        </UserProfile.Link>
+      </UserProfile.Wrap>
+      <UserProfile.FollowBtn isFollowing={true} />
+    </UserProfile>
+  ),
+};
+
+export const Detail: Story = {
+  args: {
+    type: 'detail',
+  },
+  render: (args) => (
+    <UserProfile {...args}>
+      <UserProfile.Wrap>
+        <UserProfile.Link href={'/'}>
+          <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
+          <UserProfile.Name>delay</UserProfile.Name>
+        </UserProfile.Link>
+      </UserProfile.Wrap>
+      <UserProfile.FollowBtn isFollowing={true} />
+    </UserProfile>
+  ),
+};
+
+export const Comment: Story = {
+  args: {
+    type: 'comment',
+  },
+  render: (args) => (
+    <UserProfile {...args}>
+      <UserProfile.Wrap>
+        <UserProfile.Link href={'/'}>
+          <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
+          <UserProfile.Name>delay</UserProfile.Name>
+        </UserProfile.Link>
+      </UserProfile.Wrap>
+    </UserProfile>
+  ),
+};
+
+export const Profile: Story = {
+  args: {
+    type: 'profile',
+  },
+  render: (args) => (
+    <UserProfile {...args}>
+      <UserProfile.Wrap>
+        <UserProfile.Name>
+          delay
+          <Button style={'plainRect'}>
+            <Icon src={'/icons/export.svg'} alt={'링크보내기'} size="small" />
+          </Button>
+        </UserProfile.Name>
+
+        <span>팔로워 500명</span>
+      </UserProfile.Wrap>
+      <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
+      <UserProfile.FollowBtn isFollowing={true} wide={true} />
+    </UserProfile>
+  ),
+};
