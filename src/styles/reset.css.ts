@@ -77,7 +77,6 @@ globalStyle('button:focus:not(:focus-visible), a:focus:not(:focus-visible), inpu
 globalStyle('button:disabled, input[type="submit"]:disabled, input[type="reset"]:disabled', {
   cursor: 'not-allowed',
   opacity: 0.6,
-  background: vars.colors.lightCharcoal,
 });
 
 globalStyle('img, video', {

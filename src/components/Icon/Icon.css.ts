@@ -11,15 +11,18 @@ export const iconVariants = {
     },
     large: { width: pxToVw(30), height: pxToVw(30) },
   },
-  active: {
-    true: {
+  colorFill: {
+    darkCharcoal: {
+      filter: vars.colorFilter.blackToDarkCharcoal,
+    },
+    mint: {
       filter: vars.colorFilter.blackToActiveMint,
     },
     coral: {
       filter: vars.colorFilter.blackToCoral,
     },
-    false: {
-      filter: vars.colorFilter.blackToDarkCharcoal,
+    white: {
+      filter: vars.colorFilter.blackToWhite,
     },
   },
 };
@@ -28,6 +31,6 @@ export const icon = style({});
 export const iconSize = styleVariants({
   ...iconVariants.size,
 });
-export const iconActive = styleVariants({
-  ...iconVariants.active,
+export const iconColorFill = styleVariants({
+  ...iconVariants.colorFill,
 });

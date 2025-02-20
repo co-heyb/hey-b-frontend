@@ -28,7 +28,14 @@ const buttonVariants = {
       borderRadius: 0,
     },
     circle: {
-      borderRadius: 9999,
+      padding: pxToVw(6),
+      borderRadius: '50%',
+      ['&::before']: {
+        content: '""',
+        display: 'block',
+        paddingTop: '100%',
+        marginLeft: pxToVw(-4),
+      },
     },
   },
   style: {

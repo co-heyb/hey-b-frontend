@@ -2214,7 +2214,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-docs@npm:8.5.8":
+"@storybook/addon-docs@npm:8.5.8, @storybook/addon-docs@npm:^8.5.8":
   version: 8.5.8
   resolution: "@storybook/addon-docs@npm:8.5.8"
   dependencies:
@@ -2807,6 +2807,13 @@ __metadata:
     typescript:
       optional: true
   checksum: 10c0/a7598833d665616c91bc276287caf4a780de8792ad85a85b977a0f0a74df666463bdf61b6c661bd63e22b133412375002e176ee743d18db2d904e7c374217f87
+  languageName: node
+  linkType: hard
+
+"@storybook/mdx2-csf@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@storybook/mdx2-csf@npm:1.1.0"
+  checksum: 10c0/ba4496a51efae35edb3e509e488cd16066ccf0768d2dc527bbc2650d0bc0f630540985205772d63d1711d1a5dae66136a919077c90fa2ac7a02a13de43446baa
   languageName: node
   linkType: hard
 
@@ -7987,12 +7994,14 @@ __metadata:
   resolution: "hey-b@workspace:."
   dependencies:
     "@chromatic-com/storybook": "npm:^3.2.4"
+    "@storybook/addon-docs": "npm:^8.5.8"
     "@storybook/addon-essentials": "npm:^8.5.8"
     "@storybook/addon-interactions": "npm:^8.5.8"
     "@storybook/addon-onboarding": "npm:^8.5.8"
     "@storybook/blocks": "npm:^8.5.8"
     "@storybook/builder-webpack5": "npm:^8.5.8"
     "@storybook/manager-webpack5": "npm:^6.5.16"
+    "@storybook/mdx2-csf": "npm:^1.1.0"
     "@storybook/nextjs": "npm:^8.5.8"
     "@storybook/react": "npm:^8.5.8"
     "@storybook/test": "npm:^8.5.8"
