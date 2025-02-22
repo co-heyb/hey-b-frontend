@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import Button from '../Button';
+import Comment from '../Comment';
 import Icon from '../Icon';
 import UserProfile from '.';
 import Link from 'next/link';
@@ -21,7 +22,7 @@ export default meta;
 
 type Story = StoryObj<typeof UserProfile>;
 
-export const List: Story = {
+export const ListStyle: Story = {
   args: {
     type: 'list',
   },
@@ -38,7 +39,7 @@ export const List: Story = {
   ),
 };
 
-export const Detail: Story = {
+export const DetailStyle: Story = {
   args: {
     type: 'detail',
   },
@@ -55,7 +56,7 @@ export const Detail: Story = {
   ),
 };
 
-export const Comment: Story = {
+export const CommentStyle: Story = {
   args: {
     type: 'comment',
   },
@@ -67,11 +68,14 @@ export const Comment: Story = {
           <UserProfile.Name>delay</UserProfile.Name>
         </UserProfile.Link>
       </UserProfile.Wrap>
+      <Comment>
+        comment comment comment comment comment comment comment comment comment comment comment comment comment{' '}
+      </Comment>
     </UserProfile>
   ),
 };
 
-export const Profile: Story = {
+export const ProfileStyle: Story = {
   args: {
     type: 'profile',
   },
@@ -84,7 +88,6 @@ export const Profile: Story = {
             <Icon src={'/icons/export.svg'} alt={'링크보내기'} size="small" />
           </Button>
         </UserProfile.Name>
-
         <span>팔로워 500명</span>
       </UserProfile.Wrap>
       <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
