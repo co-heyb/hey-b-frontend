@@ -1,23 +1,43 @@
+import { bounce } from '@/styles/animation.css';
 import { pxToVw } from '@/styles/px-to-vw.css';
 import { vars } from '@/styles/theme.css';
-import { style } from '@vanilla-extract/css';
-export const inputBar = style({
-  position: 'relative',
-  selectors: {
-    ['& + & ']: {
-      marginTop: pxToVw(12),
+import { globalStyle, style } from '@vanilla-extract/css';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
+
+export const inputBar = recipe({
+  base: {
+    position: 'relative',
+    selectors: {
+      ['& + & ']: {
+        marginTop: pxToVw(12),
+      },
+    },
+  },
+  variants: {
+    status: {
+      error: {
+        color: vars.colors.coral,
+        MozAnimation: `${bounce}`,
+        WebkitAnimation: `${bounce}`,
+        OAnimation: `${bounce}`,
+        animation: `${bounce}`,
+        animationDuration: '.5s',
+        animationDelay: '0.25s',
+      },
+      disabled: {},
     },
   },
 });
+
 const inputBase = style({
   width: '100%',
   boxSizing: 'border-box',
-  fontSize: pxToVw(16),
+  fontSize: pxToVw(14),
   color: vars.colors.darkCharcoal,
   backgroundColor: 'transparent',
-  border: 'none',
-  fontWeight: 600,
+  fontWeight: 500,
   boxShadow: 'none',
+  border: 'none',
   WebkitAppearance: 'none',
   selectors: {
     // hide Safari input icon
@@ -43,21 +63,11 @@ const inputBase = style({
       },
 
     ['&:placeholder']: {
-      fontSize: pxToVw(16),
+      fontSize: pxToVw(14),
       color: vars.colors.lightCharcoal,
     },
     ['&:active, &:focus, &:-webkit-autofill']: {
       outline: 'none',
-      borderColor: `${vars.colors.charcoal} !important`,
-    },
-
-    ['&:disabled, &:read-only']: {
-      backgroundColor: `${vars.colors.lightCharcoal} !important`,
-      color: `${vars.colors.darkCharcoal} !important`,
-    },
-
-    ['&.error']: {
-      borderColor: vars.colors.coral,
     },
   },
 });
@@ -65,48 +75,92 @@ const inputBase = style({
 export const input = style([
   inputBase,
   {
+    width: '100%',
     // height: pxToVw(56),
     // marginTop: pxToVw(4),
-    padding: pxToVw([10, 0]),
+    padding: pxToVw([14, 8, 6]),
     // borderRadius: pxToVw(8),
     // border: `1px solid ${vars.colors.charcoal}`,
-    borderBottom: `1px solid ${vars.colors.lightCharcoal}`,
     color: vars.colors.darkCharcoal,
-    font: 'inherit',
+    // font: 'inherit',
+    fontSize: pxToVw(14),
   },
 ]);
+
+export const inputWrap = style({
+  display: 'flex',
+  border: 'none',
+  borderBottom: `1px solid ${vars.colors.lightCharcoal}`,
+  selectors: {
+    [`&:has(input:active), &:has(input:focus), &:has(input:-webkit-autofill)`]: {
+      outline: 'none',
+      borderColor: `${vars.colors.charcoal}`,
+    },
+
+    [`&:has(input:disabled), &:has(input:read-only)`]: {
+      borderColor: vars.colors.charcoal,
+      backgroundColor: `${vars.colors.lightCharcoal} !important`,
+      color: `${vars.colors.darkCharcoal} !important`,
+    },
+
+    [`${inputBar({ status: 'error' }).split(' ')[1]} &`]: {
+      borderColor: vars.colors.coral,
+    },
+  },
+});
 
 export const inputLabel = style({
   position: 'absolute',
   top: 0,
-  left: 0,
+  left: pxToVw(8),
   display: 'flex',
   flexDirection: 'column',
   paddingTop: pxToVw(10),
-  fontSize: pxToVw(16),
-  fontWeight: 600,
+  fontSize: pxToVw(14),
+  fontWeight: 400,
   color: vars.colors.charcoal,
   transition: '0.3s',
   selectors: {
-    [`${inputBar}:has(input:disabled) &, ${inputBar}:has(input:read-only) &`]: {
-      color: vars.colors.lightCharcoal,
+    [`${inputBar()}:has(input:disabled) &, ${inputBar()}:has(input:read-only) &`]: {
+      color: vars.colors.charcoal,
     },
-    [`${inputBar}:has(input:focus) &, ${inputBar}:has(input:not(:placeholder-shown)) &`]: {
-      fontSize: pxToVw(14),
+    [`${inputBar()}:has(input:focus) &, ${inputBar()}:has(input:not(:placeholder-shown)) &`]: {
+      fontSize: pxToVw(12),
+      opacity: 0,
       transform: `translateY(${pxToVw(-14)})`,
     },
   },
 });
 
 export const inputHelper = style({
-  fontSize: pxToVw(14),
+  fontSize: pxToVw(12),
   color: vars.colors.charcoal,
+  marginTop: pxToVw(4),
+  paddingLeft: pxToVw(8),
   selectors: {
-    [`${inputBar}:has(input:disabled) &,${inputBar}:has(input:disabled) &, ${inputBar}:has(input:read-only) &`]: {
+    [`${inputBar()}:has(input:disabled) &,${inputBar()}:has(input:disabled) &, ${inputBar()}:has(input:read-only) &`]: {
       color: vars.colors.lightCharcoal,
     },
-    ['&.error']: {
+    [`${inputBar({ status: 'error' }).split(' ')[1]} &`]: {
       color: vars.colors.coral,
+    },
+    [`${inputBar({ status: 'error' }).split(' ')[1]} &:before`]: {
+      display: 'inline-flex',
+      content: '!',
+      alignItems: 'center',
+      justifyContent: 'center',
+      width: pxToVw(14),
+      height: pxToVw(14),
+      marginRight: pxToVw(4),
+      border: `1px solid ${vars.colors.coral}`,
+      borderRadius: '50%',
     },
   },
 });
+
+export const inputButtons = style({
+  display: 'flex',
+  flexShrink: 0,
+});
+
+export type InputBarVariants = RecipeVariants<typeof inputBar>;

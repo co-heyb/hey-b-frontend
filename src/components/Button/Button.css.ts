@@ -6,12 +6,16 @@ import { hexToRgb } from '@/styles/hexToRgb.css';
 const buttonBase = {
   display: 'flex',
   alignItems: 'center',
+  alignSelf: 'center',
   justifyContent: 'center',
   gap: pxToVw(4),
   border: `1px solid transparent`,
   borderRadius: pxToVw(6),
   padding: pxToVw(8),
   fontWeight: 600,
+  ['&:hover, &:active, &:focus']: {
+    opacity: 0.75,
+  },
 };
 
 const buttonVariants = {
