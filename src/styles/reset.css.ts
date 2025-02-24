@@ -34,10 +34,20 @@ globalStyle('body', {
   color: vars.colors.darkCharcoal,
 });
 
-globalStyle('ul, ol', {
+globalStyle('ul:not(.ProseMirror ul), ol:not(.ProseMirror ol)', {
   listStyle: 'none',
   padding: 0,
   margin: 0,
+});
+
+globalStyle('.ProseMirror ul,.ProseMirror ol', {
+  padding: pxToVw([0, 10]),
+});
+globalStyle('ul:marker', {
+  content: '""',
+  width: pxToVw(4),
+  height: pxToVw(4),
+  borderRadius: '50%',
 });
 
 globalStyle('a', {

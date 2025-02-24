@@ -1,9 +1,10 @@
 import Footer from '@/components/\bFooter';
 import Header from '@/components/Header';
 import TabBar from '@/components/TabBar';
+import 'remixicon/fonts/remixicon.css';
+import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 import '@/styles/reset.css';
 import type { Metadata } from 'next';
-import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 import { container } from './layout.css';
 
 export const metadata: Metadata = {
