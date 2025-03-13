@@ -4,6 +4,7 @@ import TabBar from '@/components/TabBar';
 import 'remixicon/fonts/remixicon.css';
 import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 import '@/styles/reset.css';
+import '@/styles/global.css';
 import type { Metadata } from 'next';
 import { container } from './layout.css';
 

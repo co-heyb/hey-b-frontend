@@ -3,13 +3,13 @@ import { button, ButtonVariants } from './Button.css';
 
 type ButtonTypes = NonNullable<ButtonVariants>;
 
-export type ButtonProps = {
+export interface ButtonProps {
   style?: ButtonTypes['style'];
   size?: ButtonTypes['size'];
   wide?: ButtonTypes['wide'];
   radius?: ButtonTypes['radius'];
   colorFill?: ButtonTypes['colorFill'];
-};
+}
 
 const Button = ({
   children,

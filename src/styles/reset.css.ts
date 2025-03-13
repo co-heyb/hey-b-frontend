@@ -20,34 +20,35 @@ globalStyle('html, body', {
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
 });
+
 globalStyle('input:placeholder', {
   fontFamily: `'Pretendard',  -apple-system, BlinkMacSystemFont, system-ui, Roboto,
       'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji',
       'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif`,
 });
 
+globalStyle('html', {
+  height: '100vh',
+});
+
 globalStyle('body', {
   display: 'flex',
+  overflow: 'hidden',
   flexDirection: 'column',
   minHeight: '100vh',
   backgroundColor: '#FFFFFF',
   color: vars.colors.darkCharcoal,
 });
 
+globalStyle('main', {
+  flex: 1,
+  overflowY: 'auto',
+});
+
 globalStyle('ul:not(.ProseMirror ul), ol:not(.ProseMirror ol)', {
   listStyle: 'none',
   padding: 0,
   margin: 0,
-});
-
-globalStyle('.ProseMirror ul,.ProseMirror ol', {
-  padding: pxToVw([0, 10]),
-});
-globalStyle('ul:marker', {
-  content: '""',
-  width: pxToVw(4),
-  height: pxToVw(4),
-  borderRadius: '50%',
 });
 
 globalStyle('a', {
