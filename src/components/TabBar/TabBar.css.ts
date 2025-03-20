@@ -1,4 +1,4 @@
-import { pxToVw } from '@/styles/px-to-vw.css';
+import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from '@/styles/px-to-vw.css';
 import { vars } from '@/styles/theme.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 
@@ -8,6 +8,20 @@ export const tabList = style({
   alignItems: 'center',
   height: pxToVw(78),
   padding: pxToVw([15, 12]),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      height: pxToVw(78, MOBILE_LARGE_BREAKPOINT),
+      padding: pxToVw([15, 12], MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      height: pxToVw(78, TABLET_BREAKPOINT),
+      padding: pxToVw([15, 12], TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      height: pxToVw(78, DESKTOP_BREAKPOINT),
+      padding: pxToVw([15, 12], DESKTOP_BREAKPOINT),
+    },
+  },
 });
 
 export const tabItem = styleVariants({
@@ -21,6 +35,20 @@ export const tabItem = styleVariants({
     color: vars.colors.darkCharcoal,
     textDecoration: 'none',
     transition: 'color 0.2s ease-in-out',
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        gap: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
+        fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        gap: pxToVw(8, TABLET_BREAKPOINT),
+        fontSize: pxToVw(12, TABLET_BREAKPOINT),
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        gap: pxToVw(8, DESKTOP_BREAKPOINT),
+        fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+      },
+    },
   },
   active: {
     color: vars.colors.activeMint,

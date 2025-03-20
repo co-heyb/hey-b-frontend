@@ -1,6 +1,7 @@
 export const BASE_WIDTH = 360; // Figma 기준 해상도
 export const MOBILE_LARGE_BREAKPOINT = 425; // ✅ 넓은 모바일 기준
 export const TABLET_BREAKPOINT = 768; // ✅ 태블릿 이상 px 유지
+export const DESKTOP_BREAKPOINT = 1024;
 const isStorybook = process.env.STORYBOOK === 'true';
 /**
  * px → vw 변환 함수
@@ -11,8 +12,8 @@ export const pxToVw = (value: number | string | (number | string)[], baseWidth: 
   if (Array.isArray(value)) {
     return value.map((v) => pxToVw(v, baseWidth)).join(' ');
   }
-  if (isStorybook) {
-    return `${value}px`; // ✅ Storybook에서는 px로 유지
+  if (isStorybook || baseWidth == DESKTOP_BREAKPOINT) {
+    return `${value}px`; // ✅ Storybook, DESKTOP_BREAKPOINT 에서는 px로 유지
   }
   if (typeof value === 'number') {
     return `calc(${value} * 100 / ${baseWidth} * 1vw)`;

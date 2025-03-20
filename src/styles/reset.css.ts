@@ -1,7 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { hexToRgb } from './hexToRgb.css';
 import { vars } from './theme.css';
-import { pxToVw } from './px-to-vw.css';
+import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from './px-to-vw.css';
 
 // Reset 기본 스타일
 globalStyle('*, *::before, *::after', {
@@ -19,6 +19,17 @@ globalStyle('html, body', {
       'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif`,
   WebkitFontSmoothing: 'antialiased',
   MozOsxFontSmoothing: 'grayscale',
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+    },
+  },
 });
 
 globalStyle('input:placeholder', {
@@ -31,12 +42,12 @@ globalStyle('html', {
   height: '100vh',
 });
 
-globalStyle('body', {
+globalStyle('body:not(body.sb-show-main)', {
   display: 'flex',
   overflow: 'hidden',
   flexDirection: 'column',
   minHeight: '100vh',
-  backgroundColor: '#FFFFFF',
+  backgroundColor: vars.colors.white,
   color: vars.colors.darkCharcoal,
 });
 
@@ -54,6 +65,7 @@ globalStyle('ul:not(.ProseMirror ul), ol:not(.ProseMirror ol)', {
 globalStyle('a', {
   textDecoration: 'none',
   display: 'inline-block',
+  font: 'inherit',
 });
 
 globalStyle('button, a', {
@@ -75,9 +87,26 @@ globalStyle('button, a, input[type="submit"], input[type="reset"]', {
 globalStyle(
   'button:focus-visible, a:focus-visible, input[type="submit"]:focus-visible, input[type="reset"]:focus-visible',
   {
-    outline: `2px solid ${vars.colors.mint}`,
-    outlineOffset: '2px',
-    borderRadius: '4px',
+    outline: `${pxToVw(2)} solid ${vars.colors.mint}`,
+    outlineOffset: `${pxToVw(2)}`,
+    borderRadius: `${pxToVw(4)}`,
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        outline: `${pxToVw(2, MOBILE_LARGE_BREAKPOINT)} solid ${vars.colors.mint}`,
+        outlineOffset: `${pxToVw(2, MOBILE_LARGE_BREAKPOINT)}`,
+        borderRadius: `${pxToVw(4, MOBILE_LARGE_BREAKPOINT)}`,
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        outline: `${pxToVw(2, TABLET_BREAKPOINT)} solid ${vars.colors.mint}`,
+        outlineOffset: `${pxToVw(2, TABLET_BREAKPOINT)}`,
+        borderRadius: `${pxToVw(4, TABLET_BREAKPOINT)}`,
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        outline: `${pxToVw(2, DESKTOP_BREAKPOINT)} solid ${vars.colors.mint}`,
+        outlineOffset: `${pxToVw(2, DESKTOP_BREAKPOINT)}`,
+        borderRadius: `${pxToVw(4, DESKTOP_BREAKPOINT)}`,
+      },
+    },
   },
 );
 

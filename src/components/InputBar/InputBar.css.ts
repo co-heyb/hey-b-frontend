@@ -1,5 +1,5 @@
 import { bounce } from '@/styles/animation.css';
-import { pxToVw } from '@/styles/px-to-vw.css';
+import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from '@/styles/px-to-vw.css';
 import { vars } from '@/styles/theme.css';
 import { globalStyle, style } from '@vanilla-extract/css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
@@ -10,6 +10,17 @@ export const inputBar = recipe({
     selectors: {
       ['& + & ']: {
         marginTop: pxToVw(12),
+        '@media': {
+          [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+            marginTop: pxToVw(1, MOBILE_LARGE_BREAKPOINT),
+          },
+          [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+            marginTop: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+          },
+          [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+            marginTop: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+          },
+        },
       },
     },
   },
@@ -39,6 +50,17 @@ const inputBase = style({
   boxShadow: 'none',
   border: 'none',
   WebkitAppearance: 'none',
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(14, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+    },
+  },
   selectors: {
     // hide Safari input icon
     ['&:-webkit-contacts-auto-fill-button, &:-webkit-credentials-auto-fill-button']: {
@@ -65,6 +87,17 @@ const inputBase = style({
     ['&:placeholder']: {
       fontSize: pxToVw(14),
       color: vars.colors.lightCharcoal,
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          fontSize: pxToVw(14, TABLET_BREAKPOINT),
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+        },
+      },
     },
     ['&:active, &:focus, &:-webkit-autofill']: {
       outline: 'none',
@@ -84,6 +117,20 @@ export const input = style([
     color: vars.colors.darkCharcoal,
     // font: 'inherit',
     fontSize: pxToVw(14),
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        padding: pxToVw([14, 8, 6], MOBILE_LARGE_BREAKPOINT),
+        fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        padding: pxToVw([14, 8, 6], TABLET_BREAKPOINT),
+        fontSize: pxToVw(14, TABLET_BREAKPOINT),
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        padding: pxToVw([14, 8, 6], DESKTOP_BREAKPOINT),
+        fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+      },
+    },
   },
 ]);
 
@@ -120,6 +167,23 @@ export const inputLabel = style({
   fontWeight: 400,
   color: vars.colors.charcoal,
   transition: '0.3s',
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      left: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
+      paddingTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+      fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      left: pxToVw(8, TABLET_BREAKPOINT),
+      paddingTop: pxToVw(10, TABLET_BREAKPOINT),
+      fontSize: pxToVw(14, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      left: pxToVw(8, DESKTOP_BREAKPOINT),
+      paddingTop: pxToVw(10, DESKTOP_BREAKPOINT),
+      fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+    },
+  },
   selectors: {
     [`${inputBar()}:has(input:disabled) &, ${inputBar()}:has(input:read-only) &`]: {
       color: vars.colors.charcoal,
@@ -128,6 +192,20 @@ export const inputLabel = style({
       fontSize: pxToVw(12),
       opacity: 0,
       transform: `translateY(${pxToVw(-14)})`,
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+          transform: `translateY(${pxToVw(-14, MOBILE_LARGE_BREAKPOINT)})`,
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          fontSize: pxToVw(12, TABLET_BREAKPOINT),
+          transform: `translateY(${pxToVw(-14, TABLET_BREAKPOINT)})`,
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+          transform: `translateY(${pxToVw(-14, DESKTOP_BREAKPOINT)})`,
+        },
+      },
     },
   },
 });
@@ -137,6 +215,23 @@ export const inputHelper = style({
   color: vars.colors.charcoal,
   marginTop: pxToVw(4),
   paddingLeft: pxToVw(8),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+      marginTop: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+      paddingLeft: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, TABLET_BREAKPOINT),
+      marginTop: pxToVw(4, TABLET_BREAKPOINT),
+      paddingLeft: pxToVw(8, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+      marginTop: pxToVw(4, DESKTOP_BREAKPOINT),
+      paddingLeft: pxToVw(8, DESKTOP_BREAKPOINT),
+    },
+  },
   selectors: {
     [`${inputBar()}:has(input:disabled) &,${inputBar()}:has(input:disabled) &, ${inputBar()}:has(input:read-only) &`]: {
       color: vars.colors.lightCharcoal,
@@ -154,6 +249,23 @@ export const inputHelper = style({
       marginRight: pxToVw(4),
       border: `1px solid ${vars.colors.coral}`,
       borderRadius: '50%',
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          width: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+          height: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+          marginRight: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          width: pxToVw(14, TABLET_BREAKPOINT),
+          height: pxToVw(14, TABLET_BREAKPOINT),
+          marginRight: pxToVw(4, TABLET_BREAKPOINT),
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          width: pxToVw(14, DESKTOP_BREAKPOINT),
+          height: pxToVw(14, DESKTOP_BREAKPOINT),
+          marginRight: pxToVw(4, DESKTOP_BREAKPOINT),
+        },
+      },
     },
   },
 });

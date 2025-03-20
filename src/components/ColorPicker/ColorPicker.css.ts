@@ -12,7 +12,7 @@ export const colorSwatch = style({
   width: pxToVw(24),
   height: pxToVw(24),
   borderRadius: '50%',
-  border: '1px solid #ddd',
+  border: `1px solid ${vars.colors.lightCharcoal}`,
   cursor: 'pointer',
 });
 
@@ -23,7 +23,7 @@ export const colorButton = style({
   alignItems: 'center',
   justifyContent: 'center',
   borderRadius: '50%',
-  border: '1px solid #ddd',
+  border: `1px solid ${vars.colors.lightCharcoal}`,
   cursor: 'pointer',
   fontSize: pxToVw(16),
 });
