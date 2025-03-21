@@ -84,7 +84,7 @@ export const ProfileStyle: Story = {
       <UserProfile.Wrap>
         <UserProfile.Name>
           delay
-          <Button style={'plainRect'}>
+          <Button variant={'plainRect'}>
             <Icon src={'/icons/export.svg'} alt={'링크보내기'} size="small" />
           </Button>
         </UserProfile.Name>

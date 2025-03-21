@@ -11,9 +11,8 @@ import TextStyle from '@tiptap/extension-text-style';
 import Subscript from '@tiptap/extension-subscript';
 import Superscript from '@tiptap/extension-superscript';
 import Image from '@tiptap/extension-image';
-import HorizontalRule from '@tiptap/extension-horizontal-rule';
 import sanitizeHtml from 'sanitize-html';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { editorLoading, editorWrapper, spinner, toolbar } from './TiptabEditor.css';
 import Button from '../Button';
 import ColorPicker from '../ColorPicker';
@@ -178,6 +177,12 @@ const TiptapEditor = ({ initialContent = '' }: { initialContent?: string }) => {
     },
   ];
 
+  useEffect(() => {
+    if (process.env.STORYBOOK && editor && initialContent) {
+      editor.commands.setContent(initialContent);
+    }
+  }, [initialContent, editor]);
+
   return (
     <div>
       {editor ? (
@@ -198,7 +203,7 @@ const TiptapEditor = ({ initialContent = '' }: { initialContent?: string }) => {
                   <Button
                     key={`${command}-${index}`}
                     size="extraSmall"
-                    style="plain"
+                    variant="plain"
                     radius="rect"
                     colorFill={isActive ? 'mint' : undefined}
                     onClick={() => onClick(editor)}

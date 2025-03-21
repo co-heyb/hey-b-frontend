@@ -52,13 +52,6 @@ const ColorPicker = ({ defaultColor, onComplete, isOpen, onClose }: ColorPickerP
     }
   };
 
-  // 취소 함수
-  const handleCancel = () => {
-    if (onClose) {
-      onClose();
-    }
-  };
-
   if (!isOpen) return null;
 
   return (

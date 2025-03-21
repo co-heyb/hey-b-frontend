@@ -21,7 +21,7 @@ const meta: Meta<typeof Button> = {
       options: ['rect', 'circle'],
       description: '버튼의 모양을 결정합니다. `rect`는 일반 사각형, `circle`은 원형 버튼입니다.',
     },
-    style: {
+    variant: {
       control: 'select',
       options: ['filled', 'outline', 'plain', 'plainRect', 'underline'],
       description: '버튼의 스타일을 설정합니다. 기본값은 `filled`입니다.',
@@ -51,7 +51,7 @@ export const Default: StoryObj<typeof Button> = {
   parameters: {
     docs: {
       description: {
-        story: 'Button 기본 속성은 size: small, style: filled',
+        story: 'Button 기본 속성은 size: small, variant: filled',
       },
     },
   },
@@ -62,7 +62,7 @@ export const Default: StoryObj<typeof Button> = {
 
 export const Size: StoryObj<typeof Button> = {
   args: {
-    style: 'filled',
+    variant: 'filled',
     children: 'text',
   },
   render: (args) => {
@@ -80,7 +80,7 @@ export const Size: StoryObj<typeof Button> = {
   },
 };
 
-export const Style: StoryObj<typeof Button> = {
+export const Variant: StoryObj<typeof Button> = {
   args: {
     size: 'small',
     children: 'text',
@@ -88,11 +88,11 @@ export const Style: StoryObj<typeof Button> = {
   render: (args) => {
     return (
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-        <Button {...args} style="filled"></Button>
-        <Button {...args} style="outline"></Button>
-        <Button {...args} style="underline"></Button>
-        <Button {...args} style="plain"></Button>
-        <Button {...args} style="plainRect"></Button>
+        <Button {...args} variant="filled"></Button>
+        <Button {...args} variant="outline"></Button>
+        <Button {...args} variant="underline"></Button>
+        <Button {...args} variant="plain"></Button>
+        <Button {...args} variant="plainRect"></Button>
       </div>
     );
   },
@@ -122,11 +122,11 @@ export const StyleDisabled: StoryObj<typeof Button> = {
   render: (args) => {
     return (
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-        <Button {...args} style="filled" disabled></Button>
-        <Button {...args} style="outline" disabled></Button>
-        <Button {...args} style="underline" disabled></Button>
-        <Button {...args} style="plain" disabled></Button>
-        <Button {...args} style="plainRect" disabled></Button>
+        <Button {...args} variant="filled" disabled></Button>
+        <Button {...args} variant="outline" disabled></Button>
+        <Button {...args} variant="underline" disabled></Button>
+        <Button {...args} variant="plain" disabled></Button>
+        <Button {...args} variant="plainRect" disabled></Button>
       </div>
     );
   },
@@ -141,12 +141,12 @@ export const IconButton: StoryObj<typeof Button> = {
   render: (args) => {
     return (
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '10px' }}>
-        <Button {...args} style="filled">
+        <Button {...args} variant="filled">
           <Icon src={'/icons/share.svg'} alt={'image.alt'} colorFill="white" />
         </Button>
-        <Button {...args} style="outline"></Button>
-        <Button {...args} style="plain"></Button>
-        <Button {...args} style="plainRect"></Button>
+        <Button {...args} variant="outline"></Button>
+        <Button {...args} variant="plain"></Button>
+        <Button {...args} variant="plainRect"></Button>
       </div>
     );
   },

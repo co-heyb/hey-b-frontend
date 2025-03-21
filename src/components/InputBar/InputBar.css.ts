@@ -207,6 +207,9 @@ export const inputLabel = style({
         },
       },
     },
+    [`${inputBar({ status: 'error' }).split(' ')[1]} &`]: {
+      color: vars.colors.coral,
+    },
   },
 });
 

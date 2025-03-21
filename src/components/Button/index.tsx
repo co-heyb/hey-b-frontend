@@ -4,7 +4,7 @@ import { button, ButtonVariants } from './Button.css';
 type ButtonTypes = NonNullable<ButtonVariants>;
 
 export interface ButtonProps {
-  style?: ButtonTypes['style'];
+  variant?: ButtonTypes['variant'];
   size?: ButtonTypes['size'];
   wide?: ButtonTypes['wide'];
   radius?: ButtonTypes['radius'];
@@ -13,7 +13,7 @@ export interface ButtonProps {
 
 const Button = ({
   children,
-  style,
+  variant,
   size,
   wide,
   radius,
@@ -23,7 +23,7 @@ const Button = ({
 }: React.PropsWithChildren<ButtonProps> & ButtonHTMLAttributes<HTMLButtonElement>) => {
   return (
     <>
-      <button className={`${button({ style, size, wide, radius, colorFill })} ${className}`} {...props}>
+      <button className={`${button({ variant, size, wide, radius, colorFill })} ${className}`} {...props}>
         {children}
       </button>
     </>

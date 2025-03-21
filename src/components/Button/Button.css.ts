@@ -102,17 +102,17 @@ const buttonVariants = {
       fontSize: pxToVw(16),
       '@media': {
         [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-          padding: pxToVw([0, 22], MOBILE_LARGE_BREAKPOINT),
+          padding: pxToVw([10, 22], MOBILE_LARGE_BREAKPOINT),
           borderRadius: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
           fontSize: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
         },
         [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-          padding: pxToVw([0, 22], TABLET_BREAKPOINT),
+          padding: pxToVw([10, 22], TABLET_BREAKPOINT),
           borderRadius: pxToVw(10, TABLET_BREAKPOINT),
           fontSize: pxToVw(16, TABLET_BREAKPOINT),
         },
         [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-          padding: pxToVw([0, 22], DESKTOP_BREAKPOINT),
+          padding: pxToVw([10, 22], DESKTOP_BREAKPOINT),
           borderRadius: pxToVw(10, DESKTOP_BREAKPOINT),
           fontSize: pxToVw(16, DESKTOP_BREAKPOINT),
         },
@@ -190,7 +190,7 @@ const buttonVariants = {
       },
     },
   },
-  style: {
+  variant: {
     filled: {
       background: vars.colors.darkCharcoal,
       color: vars.colors.white,
@@ -300,7 +300,7 @@ export const button = recipe({
   },
   variants: { ...buttonVariants },
   defaultVariants: {
-    style: 'filled',
+    variant: 'filled',
     size: 'small',
   },
 });
