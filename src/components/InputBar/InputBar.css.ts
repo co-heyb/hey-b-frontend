@@ -150,7 +150,12 @@ export const inputWrap = style({
       color: `${vars.colors.darkCharcoal} !important`,
     },
 
-    [`${inputBar({ status: 'error' }).split(' ')[1]} &`]: {
+    [`
+      ${inputBar({ status: 'error' }).split(' ').at(-1)} &,
+      ${inputBar({ status: 'error' }).split(' ').at(-1)} &:has(input:focus),
+      ${inputBar({ status: 'error' }).split(' ').at(-1)} &:has(input:active),
+      ${inputBar({ status: 'error' }).split(' ').at(-1)} &:has(input:-webkit-autofill)
+    `]: {
       borderColor: vars.colors.coral,
     },
   },
@@ -207,7 +212,7 @@ export const inputLabel = style({
         },
       },
     },
-    [`${inputBar({ status: 'error' }).split(' ')[1]} &`]: {
+    [`${inputBar({ status: 'error' }).split(' ').at(-1)} &`]: {
       color: vars.colors.coral,
     },
   },
@@ -239,10 +244,10 @@ export const inputHelper = style({
     [`${inputBar()}:has(input:disabled) &,${inputBar()}:has(input:disabled) &, ${inputBar()}:has(input:read-only) &`]: {
       color: vars.colors.lightCharcoal,
     },
-    [`${inputBar({ status: 'error' }).split(' ')[1]} &`]: {
+    [`${inputBar({ status: 'error' }).split(' ').at(-1)} &`]: {
       color: vars.colors.coral,
     },
-    [`${inputBar({ status: 'error' }).split(' ')[1]} &:before`]: {
+    [`${inputBar({ status: 'error' }).split(' ').at(-1)} &:before`]: {
       display: 'inline-flex',
       content: '!',
       alignItems: 'center',
