@@ -6,7 +6,7 @@ import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
 import '@/styles/reset.css';
 import '@/styles/global.css';
 import type { Metadata } from 'next';
-import { container } from './layout.css';
+import { container, wrap } from './layout.css';
 
 export const metadata: Metadata = {
   title: 'HeyB - 작은 시작이 만드는 새로운 즐거움',
@@ -64,10 +64,12 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
     <html lang="ko">
       <body>
-        <div className={container}>
+        <div className={wrap}>
           <Header />
-          <main>{children}</main>
-          <Footer />
+          <main className={container}>
+            {children}
+            <Footer />
+          </main>
           <TabBar />
         </div>
       </body>

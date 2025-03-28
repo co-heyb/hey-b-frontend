@@ -8,7 +8,7 @@ const buttonBase = {
   alignItems: 'center',
   alignSelf: 'center',
   justifyContent: 'center',
-  gap: pxToVw(4),
+  gap: pxToVw(8),
   border: `1px solid transparent`,
   borderRadius: pxToVw(6),
   padding: pxToVw(8),
@@ -16,17 +16,17 @@ const buttonBase = {
   flexShrink: 0,
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-      gap: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+      gap: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
       borderRadius: pxToVw(6, MOBILE_LARGE_BREAKPOINT),
       padding: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-      gap: pxToVw(4, TABLET_BREAKPOINT),
+      gap: pxToVw(8, TABLET_BREAKPOINT),
       borderRadius: pxToVw(6, TABLET_BREAKPOINT),
       padding: pxToVw(8, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-      gap: pxToVw(4, DESKTOP_BREAKPOINT),
+      gap: pxToVw(8, DESKTOP_BREAKPOINT),
       borderRadius: pxToVw(6, DESKTOP_BREAKPOINT),
       padding: pxToVw(8, DESKTOP_BREAKPOINT),
     },
@@ -141,7 +141,36 @@ const buttonVariants = {
       },
     },
   },
-  wide: { true: { width: '100%', flexShrink: 1, flexGrow: 1 } },
+  wide: {
+    true: {
+      width: '100%',
+      flexShrink: 1,
+      flexGrow: 1,
+      ['& + &']: {
+        marginTop: pxToVw(10),
+      },
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          width: '100%',
+          ['& + &']: {
+            marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+          },
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          width: '100%',
+          ['& + &']: {
+            marginTop: pxToVw(10, TABLET_BREAKPOINT),
+          },
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          width: '100%',
+          ['& + &']: {
+            marginTop: pxToVw(10, DESKTOP_BREAKPOINT),
+          },
+        },
+      },
+    },
+  },
   radius: {
     rect: {
       borderRadius: 0,
@@ -291,6 +320,21 @@ const buttonVariants = {
     coral: {
       background: vars.colors.coral,
       color: vars.colors.white,
+    },
+    google: {
+      background: vars.colors.white,
+      color: '#1F1F1F',
+      borderColor: '#747775',
+    },
+    kakao: {
+      background: '#FEE500',
+      color: '#191600',
+      borderColor: '#FEE500',
+    },
+    naver: {
+      background: '#03C75A',
+      color: vars.colors.white,
+      borderColor: '#03C75A',
     },
   },
 };

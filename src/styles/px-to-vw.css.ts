@@ -12,8 +12,8 @@ export const pxToVw = (value: number | string | (number | string)[], baseWidth: 
   if (Array.isArray(value)) {
     return value.map((v) => pxToVw(v, baseWidth)).join(' ');
   }
-  if (isStorybook || baseWidth == DESKTOP_BREAKPOINT) {
-    return `${value}px`; // ✅ Storybook, DESKTOP_BREAKPOINT 에서는 px로 유지
+  if (baseWidth == DESKTOP_BREAKPOINT) {
+    return `${value}px`; // DESKTOP_BREAKPOINT 에서는 px로 유지
   }
   if (typeof value === 'number') {
     return `calc(${value} * 100 / ${baseWidth} * 1vw)`;
