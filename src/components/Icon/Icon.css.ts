@@ -13,12 +13,12 @@ export const iconVariants = {
           height: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
         },
         [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-          width: pxToVw(16, TABLET_BREAKPOINT),
-          height: pxToVw(16, TABLET_BREAKPOINT),
+          width: pxToVw(18, TABLET_BREAKPOINT),
+          height: pxToVw(18, TABLET_BREAKPOINT),
         },
         [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-          width: pxToVw(16, DESKTOP_BREAKPOINT),
-          height: pxToVw(16, DESKTOP_BREAKPOINT),
+          width: pxToVw(20, DESKTOP_BREAKPOINT),
+          height: pxToVw(20, DESKTOP_BREAKPOINT),
         },
       },
     },
@@ -31,12 +31,12 @@ export const iconVariants = {
           height: pxToVw(24, MOBILE_LARGE_BREAKPOINT),
         },
         [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-          width: pxToVw(24, TABLET_BREAKPOINT),
-          height: pxToVw(24, TABLET_BREAKPOINT),
+          width: pxToVw(26, TABLET_BREAKPOINT),
+          height: pxToVw(26, TABLET_BREAKPOINT),
         },
         [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-          width: pxToVw(24, DESKTOP_BREAKPOINT),
-          height: pxToVw(24, DESKTOP_BREAKPOINT),
+          width: pxToVw(28, DESKTOP_BREAKPOINT),
+          height: pxToVw(28, DESKTOP_BREAKPOINT),
         },
       },
     },
@@ -49,12 +49,12 @@ export const iconVariants = {
           height: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
         },
         [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-          width: pxToVw(30, TABLET_BREAKPOINT),
-          height: pxToVw(30, TABLET_BREAKPOINT),
+          width: pxToVw(32, TABLET_BREAKPOINT),
+          height: pxToVw(32, TABLET_BREAKPOINT),
         },
         [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-          width: pxToVw(30, DESKTOP_BREAKPOINT),
-          height: pxToVw(30, DESKTOP_BREAKPOINT),
+          width: pxToVw(34, DESKTOP_BREAKPOINT),
+          height: pxToVw(34, DESKTOP_BREAKPOINT),
         },
       },
     },
@@ -72,6 +72,7 @@ export const iconVariants = {
     white: {
       filter: vars.colorFilter.blackToWhite,
     },
+    origin: {},
   },
 };
 

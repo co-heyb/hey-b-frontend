@@ -1,6 +1,6 @@
 import { globalFontFace, globalStyle } from '@vanilla-extract/css';
 import { createGlobalTheme } from '@vanilla-extract/css';
-import { pxToVw } from './px-to-vw.css';
+import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from './px-to-vw.css';
 
 // Pretendard 폰트 등록
 globalFontFace('Pretendard', {
@@ -17,6 +17,17 @@ globalStyle('body', {
   fontFamily:
     '"Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif',
   lineHeight: '1.5',
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+    },
+  },
 });
 
 export const theme = {

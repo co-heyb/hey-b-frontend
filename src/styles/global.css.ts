@@ -6,6 +6,23 @@ globalStyle('*:focus-visible ', {
   outline: `1px auto ${vars.colors.mint}`,
 });
 
+globalStyle('.center-container', {
+  width: '100%',
+  margin: '0 auto',
+  maxWidth: pxToVw(400),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      maxWidth: pxToVw(400, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      maxWidth: pxToVw(400, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      maxWidth: pxToVw(400, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
 globalStyle('.ProseMirror', {
   border: `1px solid ${vars.colors.lightCharcoal}`,
   padding: pxToVw(8),
@@ -77,9 +94,10 @@ globalStyle('h1', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
+
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-      fontSize: pxToVw(2, MOBILE_LARGE_BREAKPOINT),
+      fontSize: pxToVw(24, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(24, TABLET_BREAKPOINT),
@@ -95,15 +113,19 @@ globalStyle('h2', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
+  marginBottom: pxToVw(24),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-      fontSize: pxToVw(2, MOBILE_LARGE_BREAKPOINT),
+      fontSize: pxToVw(22, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(24, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(22, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(24, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(22, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(24, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -113,15 +135,19 @@ globalStyle('h3', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
+  marginBottom: pxToVw(24),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(18, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(18, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(20, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(18, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(20, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -131,15 +157,19 @@ globalStyle('h4', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
+  marginBottom: pxToVw(24),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(16, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(16, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(16, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(16, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -149,15 +179,19 @@ globalStyle('h5', {
   fontWeight: 'bold',
   lineHeight: '1.6',
   letterSpacing: '-0.01em',
+  marginBottom: pxToVw(24),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(14, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(12, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(12, DESKTOP_BREAKPOINT),
     },
   },
 });

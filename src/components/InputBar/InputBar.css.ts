@@ -8,17 +8,29 @@ export const inputBar = recipe({
   base: {
     position: 'relative',
     selectors: {
-      ['& + & ']: {
-        marginTop: pxToVw(12),
-        '@media': {
-          [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-            marginTop: pxToVw(1, MOBILE_LARGE_BREAKPOINT),
+      ['& + &']: {
+        marginTop: pxToVw(10),
+      },
+    },
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        selectors: {
+          ['& + &']: {
+            marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
           },
-          [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-            marginTop: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+        },
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        selectors: {
+          ['& + &']: {
+            marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
           },
-          [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-            marginTop: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+        },
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        selectors: {
+          ['& + &']: {
+            marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
           },
         },
       },

@@ -51,11 +51,6 @@ globalStyle('body:not(body.sb-show-main)', {
   color: vars.colors.darkCharcoal,
 });
 
-globalStyle('main', {
-  flex: 1,
-  overflowY: 'auto',
-});
-
 globalStyle('ul:not(.ProseMirror ul), ol:not(.ProseMirror ol)', {
   listStyle: 'none',
   padding: 0,
