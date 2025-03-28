@@ -1,12 +1,7 @@
 'use client';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import dynamic from 'next/dynamic';
-
-const TiptapEditor = dynamic(() => import('./'), {
-  ssr: false,
-});
-TiptapEditor.displayName = 'TiptapEditor';
+import TiptapEditor from '.';
 
 const meta: Meta<typeof TiptapEditor> = {
   title: 'components/TiptapEditor',
