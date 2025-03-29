@@ -1,7 +1,12 @@
 'use client';
 
 import type { Meta, StoryObj } from '@storybook/react';
-import TiptapEditor from '.';
+import dynamic from 'next/dynamic';
+
+const TiptapEditor = dynamic(() => import('./'), {
+  ssr: false,
+});
+TiptapEditor.displayName = 'TiptapEditor';
 
 const meta: Meta<typeof TiptapEditor> = {
   title: 'components/TiptapEditor',
@@ -10,6 +15,9 @@ const meta: Meta<typeof TiptapEditor> = {
   parameters: {
     layout: 'fullscreen',
     docs: {
+      source: {
+        type: 'code',
+      },
       description: {
         story: 'Tiptap 기반 커스텀 에디터입니다. Bold, Italic, Heading, Color 등 다양한 툴을 제공합니다.',
       },
