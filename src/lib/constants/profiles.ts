@@ -1,0 +1,88 @@
+import { ProfileCharacter } from '@/types/modules/users';
+
+export const profiles: ProfileCharacter[] = [
+  {
+    id: 'jju',
+    name: '쮸',
+    animal: 'mouse',
+    description: '세상에서 제일 빠른 치즈 감별사! 🧀',
+    imageUrl: '/images/profile/jju.png',
+  },
+  {
+    id: 'moong',
+    name: '뭉',
+    animal: 'cow',
+    description: '느긋하고 꼼꼼한 풀뜯기 마스터 🌿',
+    imageUrl: '/images/profile/moong.png',
+  },
+  {
+    id: 'hoya',
+    name: '호야',
+    animal: 'tiger',
+    description: '미니 북클럽을 운영하는 용맹냥이 📚',
+    imageUrl: '/images/profile/hoya.png',
+  },
+  {
+    id: 'kongi',
+    name: '콩이',
+    animal: 'rabbit',
+    description: '엽서 만드는 감성 토끼 🌸',
+    imageUrl: '/images/profile/kongi.png',
+  },
+  {
+    id: 'loony',
+    name: '루니',
+    animal: 'dragon',
+    description: '구름 타고 다니는 공상가 ☁️',
+    imageUrl: '/images/profile/loony.png',
+  },
+  {
+    id: 'ningyi',
+    name: '닝이',
+    animal: 'snake',
+    description: '그림자 속 조용한 관찰 화가 ✏️',
+    imageUrl: '/images/profile/ningyi.png',
+  },
+  {
+    id: 'daro',
+    name: '다로',
+    animal: 'horse',
+    description: '춤과 운동을 사랑하는 액티비티왕 💃',
+    imageUrl: '/images/profile/daro.png',
+  },
+  {
+    id: 'mongsil',
+    name: '몽실',
+    animal: 'goat',
+    description: '낮잠과 쿠키를 사랑하는 털실 요정 🍪',
+    imageUrl: '/images/profile/mongsil.png',
+  },
+  {
+    id: 'monkiring',
+    name: '몽키링',
+    animal: 'monkey',
+    description: '장난과 따라하기의 천재 🙈',
+    imageUrl: '/images/profile/monkiring.png',
+  },
+  {
+    id: 'ttotto',
+    name: '또또',
+    animal: 'chick',
+    description: '그림일기 쓰는 heyB 마스코트 🐣',
+    imageUrl: '/images/profile/ttotto.png',
+  },
+  {
+    id: 'doori',
+    name: '두리',
+    animal: 'dog',
+    description: '친구 일정 잘 챙기는 다꾸 마스터 📒',
+    imageUrl: '/images/profile/doori.png',
+  },
+  {
+    id: 'kkuying',
+    name: '꾸잉',
+    animal: 'pig',
+    description: '맛집과 일기를 사랑하는 먹보 천재 😋',
+    imageUrl: '/images/profile/kkuying.png',
+  },
+];

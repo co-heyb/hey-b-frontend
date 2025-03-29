@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { login } from '@/lib/api/auth';
 import InputBar from '@/components/InputBar';
 import Button from '@/components/Button';
 import Icon from '@/components/Icon';
@@ -10,6 +9,8 @@ import GoogleButton from '@/components/ActionButtons/Login/GoogleButton';
 import KakaoButton from '@/components/ActionButtons/Login/KakaoButton';
 import NaverButton from '@/components/ActionButtons/Login/NaverButton';
 import InputToggle from '@/components/InputToggle';
+import api from '@/lib/api';
+import SubmitLoginButton from '@/components/ActionButtons/Login/SubmitLoginButton';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -17,22 +18,6 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [autoLogin, setAutoLogin] = useState(false);
-
-  const handleLogin = async () => {
-    try {
-      const result = await login({ email, password });
-
-      if (!result.hasProfile) {
-        router.push('/signup/flow?step=profile');
-      } else if (!result.agreedTerms) {
-        router.push('/signup/flow?step=terms');
-      } else {
-        router.push('/');
-      }
-    } catch (err: any) {
-      alert(err.message || '로그인 실패! 다시 확인해주세요.');
-    }
-  };
 
   return (
     <section className="center-container">
@@ -60,9 +45,9 @@ const LoginPage = () => {
           </InputBar.Buttons>
         </InputBar.Input>
       </InputBar>
-      <Button style={{ marginTop: 16 }} size="medium" wide colorFill="mint" onClick={handleLogin}>
+      <SubmitLoginButton email={email} password={password} autoLogin={autoLogin} style={{ marginTop: 16 }}>
         로그인
-      </Button>
+      </SubmitLoginButton>
       <InputToggle style={{ marginTop: 10 }}>
         <InputToggle.Input type="checkbox">자동로그인</InputToggle.Input>
       </InputToggle>

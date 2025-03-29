@@ -1,1 +1,8 @@
 export type UserProfileType = 'list' | 'profile' | 'comment' | 'detail';
+export interface ProfileCharacter {
+  id: string;
+  name: string;
+  animal: string;
+  description: string;
+  imageUrl: string;
+}
