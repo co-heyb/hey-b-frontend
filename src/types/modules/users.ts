@@ -5,4 +5,6 @@ export interface ProfileCharacter {
   animal: string;
   description: string;
   imageUrl: string;
+  quote: string;
+  item: string[];
 }

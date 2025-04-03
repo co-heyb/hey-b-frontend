@@ -7,9 +7,14 @@ globalStyle('*:focus-visible ', {
 });
 
 globalStyle('.center-container', {
+  display: 'flex',
+  flexDirection: 'column',
+  flexGrow: 1,
+  justifyContent: 'center',
+  alignSelf: 'center',
   width: '100%',
-  margin: '0 auto',
   maxWidth: pxToVw(400),
+
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       maxWidth: pxToVw(400, MOBILE_LARGE_BREAKPOINT),
@@ -19,6 +24,166 @@ globalStyle('.center-container', {
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       maxWidth: pxToVw(400, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.flex-center', {
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+});
+
+globalStyle('.text-center', {
+  textAlign: 'center',
+});
+
+globalStyle('.gap-10', {
+  gap: pxToVw(10),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      gap: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      gap: pxToVw(10, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      gap: pxToVw(10, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.gap-20', {
+  gap: pxToVw(20),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      gap: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      gap: pxToVw(20, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      gap: pxToVw(20, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.mt-10', {
+  marginTop: pxToVw(10),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(10, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(10, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.mt-20', {
+  marginTop: pxToVw(20),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(20, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(20, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.mb-10', {
+  marginBottom: pxToVw(10),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(10, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(10, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.mb-20', {
+  marginBottom: pxToVw(20),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(20, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(20, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.pt-10', {
+  paddingTop: pxToVw(10),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(10, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(10, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.pt-20', {
+  paddingTop: pxToVw(20),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(20, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(20, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.pb-10', {
+  paddingBottom: pxToVw(10),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(10, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(10, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
+globalStyle('.pb-20', {
+  paddingBottom: pxToVw(20),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(20, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(20, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -113,19 +278,19 @@ globalStyle('h2', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
-  marginBottom: pxToVw(24),
+  marginBottom: pxToVw(12),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(22, MOBILE_LARGE_BREAKPOINT),
-      marginBottom: pxToVw(24, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(22, TABLET_BREAKPOINT),
-      marginBottom: pxToVw(24, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(12, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(22, DESKTOP_BREAKPOINT),
-      marginBottom: pxToVw(24, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(12, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -135,19 +300,19 @@ globalStyle('h3', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
-  marginBottom: pxToVw(24),
+  marginBottom: pxToVw(12),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(18, MOBILE_LARGE_BREAKPOINT),
-      marginBottom: pxToVw(20, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(18, TABLET_BREAKPOINT),
-      marginBottom: pxToVw(20, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(12, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(18, DESKTOP_BREAKPOINT),
-      marginBottom: pxToVw(20, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(12, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -157,19 +322,19 @@ globalStyle('h4', {
   fontWeight: 'bold',
   lineHeight: '1.5',
   letterSpacing: '-0.02em',
-  marginBottom: pxToVw(24),
+  marginBottom: pxToVw(12),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
-      marginBottom: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       fontSize: pxToVw(16, TABLET_BREAKPOINT),
-      marginBottom: pxToVw(16, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(12, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(16, DESKTOP_BREAKPOINT),
-      marginBottom: pxToVw(16, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(12, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -179,7 +344,7 @@ globalStyle('h5', {
   fontWeight: 'bold',
   lineHeight: '1.6',
   letterSpacing: '-0.01em',
-  marginBottom: pxToVw(24),
+  marginBottom: pxToVw(12),
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
@@ -210,6 +375,21 @@ globalStyle('p', {
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+globalStyle('h2 + p', {
+  marginBottom: pxToVw(32),
+  color: vars.colors.charcoal,
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(32, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(32, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(32, DESKTOP_BREAKPOINT),
     },
   },
 });

@@ -7,7 +7,7 @@ import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 export const inputToggle = recipe({
   base: {
     display: 'flex',
-    flexDirection: 'column',
+    flexWrap: 'wrap',
     selectors: {
       ['& + &']: {
         marginTop: pxToVw(10),
@@ -50,6 +50,14 @@ export const inputToggle = recipe({
       },
       disabled: {
         color: `${vars.colors.darkCharcoal} !important`,
+      },
+    },
+    direction: {
+      column: {
+        flexDirection: 'column',
+      },
+      row: {
+        flexDirection: 'row',
       },
     },
   },
@@ -105,6 +113,8 @@ export const inputLabel = style({
 });
 
 export const inputIcon = style({
+  position: 'relative',
+  zIndex: 1,
   display: 'flex',
   alignSelf: 'center',
   border: `1px solid ${vars.colors.lightCharcoal}`,

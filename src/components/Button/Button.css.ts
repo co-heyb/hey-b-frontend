@@ -146,25 +146,25 @@ const buttonVariants = {
       width: '100%',
       flexShrink: 1,
       flexGrow: 1,
-      ['& + &']: {
+      [':not(.flex-center) > & +  &']: {
         marginTop: pxToVw(10),
       },
       '@media': {
         [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
           width: '100%',
-          ['& + &']: {
+          [':not(.flex-center) > & +  &']: {
             marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
           },
         },
         [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
           width: '100%',
-          ['& + &']: {
+          [':not(.flex-center) > & +  &']: {
             marginTop: pxToVw(10, TABLET_BREAKPOINT),
           },
         },
         [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
           width: '100%',
-          ['& + &']: {
+          [':not(.flex-center) > & +  &']: {
             marginTop: pxToVw(10, DESKTOP_BREAKPOINT),
           },
         },

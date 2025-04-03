@@ -1,5 +1,6 @@
 import { profiles } from '@/lib/constants/profiles';
 import { vars } from '@/styles/theme.css';
+import Image from 'next/image';
 
 const TtottoFriendsUniverse = () => {
   return (
@@ -13,9 +14,11 @@ const TtottoFriendsUniverse = () => {
       <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '24px' }}>
         {profiles.map((profile) => (
           <li key={profile.id} style={{ textAlign: 'center' }}>
-            <img
+            <Image
               src={profile.imageUrl}
               alt={profile.name}
+              width={180}
+              height={180}
               style={{ width: '100%', maxWidth: '180px', aspectRatio: '1', objectFit: 'contain', margin: '0 auto' }}
             />
             <h2 style={{ fontSize: '18px', marginTop: '12px', marginBottom: '4px' }}>{profile.name}</h2>

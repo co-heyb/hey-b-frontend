@@ -9,6 +9,15 @@ interface FetcherOptions {
   body?: any;
 }
 
+export class APIError extends Error {
+  status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.name = 'APIError';
+    this.status = status;
+  }
+}
+
 const request = async <T>(method: Method, url: string, options: FetcherOptions = {}): Promise<T> => {
   const token = store.auth.useAuthStore.getState().accessToken;
 
@@ -24,12 +33,11 @@ const request = async <T>(method: Method, url: string, options: FetcherOptions =
 
   if (!res.ok) {
     const error = await res.json();
-    throw new Error(error.message || 'API 요청 실패');
+    throw new APIError(error.message || 'API 요청 실패', res.status);
   }
 
   return res.json();
 };
-
 export const fetcher = {
   get: <T>(url: string, options?: FetcherOptions) => request<T>('GET', url, options),
   post: <T>(url: string, body?: any, options?: FetcherOptions) => request<T>('POST', url, { ...options, body }),

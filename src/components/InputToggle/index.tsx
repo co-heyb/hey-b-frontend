@@ -9,17 +9,21 @@ type InputToggleTypes = NonNullable<InputToggleVariants>;
 
 export type InputToggleProps = {
   status?: InputToggleTypes['status'];
+  direction?: InputToggleTypes['direction'];
+  name?: string;
 };
 
 const InputToggle = ({
   children,
   status,
+  direction = 'column',
+  name,
   ...props
 }: React.PropsWithChildren<InputToggleProps> & HTMLAttributes<HTMLDivElement>) => {
   const autoName = useId();
   return (
-    <div className={inputToggle({ status })} {...props}>
-      {setChildrenWithProps(children, { name: autoName })}
+    <div className={inputToggle({ status, direction })} {...props}>
+      {setChildrenWithProps(children, { name: name || autoName })}
     </div>
   );
 };
