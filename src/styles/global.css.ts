@@ -1,6 +1,7 @@
 import { globalStyle } from '@vanilla-extract/css';
 import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from './px-to-vw.css';
 import { vars } from './theme.css';
+import { termContent } from '@/components/\bSignup/Signup.css';
 
 globalStyle('*:focus-visible ', {
   outline: `1px auto ${vars.colors.mint}`,
@@ -291,6 +292,24 @@ globalStyle('h2', {
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       fontSize: pxToVw(22, DESKTOP_BREAKPOINT),
       marginBottom: pxToVw(12, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+globalStyle(`${termContent} h2`, {
+  fontSize: pxToVw(13),
+  marginBottom: pxToVw(4),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(13, MOBILE_LARGE_BREAKPOINT),
+      marginBottom: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(13, TABLET_BREAKPOINT),
+      marginBottom: pxToVw(4, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      fontSize: pxToVw(13, DESKTOP_BREAKPOINT),
+      marginBottom: pxToVw(4, DESKTOP_BREAKPOINT),
     },
   },
 });

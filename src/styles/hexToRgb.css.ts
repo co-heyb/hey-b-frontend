@@ -5,6 +5,7 @@
  */
 export const hexToRgb = (hex: string): string => {
   // HEX 값에서 `#` 제거
+  console.log(hex);
   hex = hex.replace(/^#/, '');
 
   // 3자리 HEX 값을 6자리로 변환 (#FFF → #FFFFFF)
@@ -20,6 +21,6 @@ export const hexToRgb = (hex: string): string => {
   const r = (bigint >> 16) & 255;
   const g = (bigint >> 8) & 255;
   const b = bigint & 255;
-
+  console.log(r, g, b);
   return `${r}, ${g}, ${b}`;
 };

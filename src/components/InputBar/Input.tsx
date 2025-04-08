@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from 'react';
 import { input, inputWrap } from './InputBar.css';
+import React from 'react';
 
 const Input = ({ children, ...props }: React.PropsWithChildren & InputHTMLAttributes<HTMLInputElement>) => {
   return (
@@ -10,4 +11,4 @@ const Input = ({ children, ...props }: React.PropsWithChildren & InputHTMLAttrib
   );
 };
 
-export default Input;
+export default React.memo(Input); // eslint-disable-line react/display-name

@@ -1,5 +1,4 @@
 import { globalStyle } from '@vanilla-extract/css';
-import { hexToRgb } from './hexToRgb.css';
 import { vars } from './theme.css';
 import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from './px-to-vw.css';
 
@@ -64,7 +63,7 @@ globalStyle('a', {
 });
 
 globalStyle('button, a', {
-  WebkitTapHighlightColor: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.1)`,
+  WebkitTapHighlightColor: `rgba(${vars.rgbColors.darkCharcoal}, 0.1)`,
 });
 
 globalStyle('button, a, input[type="submit"], input[type="reset"]', {

@@ -1,7 +1,6 @@
 import { vars } from '@/styles/theme.css';
 import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from '@/styles/px-to-vw.css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
-import { hexToRgb } from '@/styles/hexToRgb.css';
 
 const buttonBase = {
   display: 'flex',
@@ -225,8 +224,8 @@ const buttonVariants = {
       color: vars.colors.white,
 
       ['&:disabled']: {
-        color: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.3)`,
-        backgroundColor: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.04)`,
+        color: `rgba(${vars.rgbColors.darkCharcoal}, 0.3)`,
+        backgroundColor: `rgba(${vars.rgbColors.darkCharcoal}, 0.04)`,
       },
     },
     outline: {
@@ -235,8 +234,8 @@ const buttonVariants = {
       color: vars.colors.darkCharcoal,
 
       ['&:disabled']: {
-        color: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.3)`,
-        borderColor: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.1)`,
+        color: `rgba(${vars.rgbColors.darkCharcoal}, 0.3)`,
+        borderColor: `rgba(${vars.rgbColors.darkCharcoal}, 0.1)`,
       },
     },
     plain: {
@@ -255,7 +254,7 @@ const buttonVariants = {
         },
       },
       ['&:disabled']: {
-        color: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.3)`,
+        color: `rgba(${vars.rgbColors.darkCharcoal}, 0.3)`,
       },
     },
     plainRect: {
@@ -307,7 +306,7 @@ const buttonVariants = {
         },
       },
       ['&:disabled']: {
-        color: `rgba(${hexToRgb(vars.colors.darkCharcoal)}, 0.3)`,
+        color: `rgba(${vars.rgbColors.darkCharcoal}, 0.3)`,
       },
     },
   },

@@ -43,9 +43,25 @@ export const theme = {
     softMint: '#78C6C4', // 버튼 호버, 강조된 배경
     lightMint: '#B7D3D2', // 탐색 페이지 배경
     beige: '#EDC7B7', // 강조 배경
-    background: '#F3F4F6',
+    background: '#F7F7F7',
     white: '#FFFFFF',
     black: '#000000',
+  },
+  rgbColors: {
+    mint: '163, 218, 209',
+    activeMint: '48, 159, 146',
+    coral: '222, 84, 44',
+    softYellow: '243, 229, 171',
+    darkCharcoal: '48, 60, 71',
+    charcoal: '90, 106, 124',
+    lightCharcoal: '182, 186, 188',
+    lightYellow: '255, 248, 179',
+    softMint: '120, 198, 196',
+    lightMint: '183, 211, 210',
+    beige: '237, 199, 183',
+    background: '247, 247, 247',
+    white: '255, 255, 255',
+    black: '0, 0, 0',
   },
   colorFilter: {
     blackToDarkCharcoal: 'brightness(0.4) contrast(1.2) grayscale(1)',

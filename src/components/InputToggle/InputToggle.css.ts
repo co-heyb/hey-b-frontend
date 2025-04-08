@@ -63,55 +63,6 @@ export const inputToggle = recipe({
   },
 });
 
-export const inputLabel = style({
-  display: 'flex',
-  flexWrap: 'wrap',
-  alignSelf: 'flex-start',
-  fontSize: pxToVw(14),
-  fontWeight: 400,
-  color: vars.colors.charcoal,
-  selectors: {
-    [`${inputToggle()}:has(input:disabled) &`]: {
-      color: vars.colors.lightCharcoal,
-    },
-    [`${inputToggle({ status: 'error' }).split(' ').at(-1)} &`]: {
-      color: vars.colors.coral,
-    },
-    ['& ~ &']: {
-      marginTop: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
-    },
-  },
-  '@media': {
-    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-      left: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
-      fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
-      selectors: {
-        ['& + &']: {
-          marginTop: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
-        },
-      },
-    },
-    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-      left: pxToVw(8, TABLET_BREAKPOINT),
-      fontSize: pxToVw(14, TABLET_BREAKPOINT),
-      selectors: {
-        ['& + &']: {
-          marginTop: pxToVw(8, TABLET_BREAKPOINT),
-        },
-      },
-    },
-    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-      left: pxToVw(8, DESKTOP_BREAKPOINT),
-      fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
-      selectors: {
-        ['& + &']: {
-          marginTop: pxToVw(8, DESKTOP_BREAKPOINT),
-        },
-      },
-    },
-  },
-});
-
 export const inputIcon = style({
   position: 'relative',
   zIndex: 1,
@@ -160,6 +111,62 @@ export const inputIcon = style({
       selectors: {
         [`input[type='checkbox'] + &`]: {
           borderRadius: pxToVw(5, DESKTOP_BREAKPOINT),
+        },
+      },
+    },
+  },
+});
+
+export const inputLabel = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignSelf: 'flex-start',
+  fontSize: pxToVw(14),
+  fontWeight: 400,
+  color: vars.colors.charcoal,
+  borderWidth: 1,
+  borderStyle: 'solid',
+  borderColor: 'transparent',
+  selectors: {
+    [`${inputToggle()}:has(input:disabled) &`]: {
+      color: vars.colors.lightCharcoal,
+    },
+    [`${inputToggle({ status: 'error' }).split(' ').at(-1)} &`]: {
+      color: vars.colors.coral,
+    },
+    [`${inputToggle({ direction: 'column' })} & ~ &`]: {
+      marginTop: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
+    },
+
+    [`&:not(:has(${inputIcon})):has(input:checked)`]: {
+      borderColor: vars.colors.mint,
+    },
+  },
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      left: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
+      fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
+      selectors: {
+        [`${inputToggle({ direction: 'column' })} & ~ &`]: {
+          marginTop: pxToVw(8, MOBILE_LARGE_BREAKPOINT),
+        },
+      },
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      left: pxToVw(8, TABLET_BREAKPOINT),
+      fontSize: pxToVw(14, TABLET_BREAKPOINT),
+      selectors: {
+        [`${inputToggle({ direction: 'column' })} & ~ &`]: {
+          marginTop: pxToVw(8, TABLET_BREAKPOINT),
+        },
+      },
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      left: pxToVw(8, DESKTOP_BREAKPOINT),
+      fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+      selectors: {
+        [`${inputToggle({ direction: 'column' })} & ~ &`]: {
+          marginTop: pxToVw(8, DESKTOP_BREAKPOINT),
         },
       },
     },
