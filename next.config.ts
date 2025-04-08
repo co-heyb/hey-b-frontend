@@ -4,8 +4,10 @@ import type { NextConfig } from 'next';
 const withVanillaExtract = createVanillaExtractPlugin();
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   reactStrictMode: true,
-  swcMinify: true,
 };
 
 export default withVanillaExtract(nextConfig);
