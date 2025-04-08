@@ -7,6 +7,7 @@ import InputToggle from '@/components/InputToggle';
 import { useEffect, useState } from 'react';
 import { termContent } from '../Signup.css';
 import useCheckbox from '@/hooks/useCheckbox';
+import { vars } from '@/styles/theme.css';
 
 const StepTerms = () => {
   const { back, next } = useSignupStep();
@@ -68,7 +69,7 @@ const StepTerms = () => {
         <p>서비스 이용을 위해 약관에 동의해주세요.</p>
       </div>
       <form>
-        <InputToggle className="mt-20">
+        <InputToggle className="mt-20 pb-10" style={{ borderBottom: `1px solid ${vars.colors.lightCharcoal}` }}>
           <InputToggle.Input type="checkbox" checked={checkedAll} onChange={handleCheckAll}>
             전체동의
           </InputToggle.Input>
