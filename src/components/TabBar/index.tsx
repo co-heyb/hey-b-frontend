@@ -29,7 +29,8 @@ const TabBar = () => {
         <TabItem href="/" src="/icons/home.svg" alt="홈 아이콘" label="홈" />
         <TabItem href="/community" src="/icons/community.svg" alt="커뮤니티 아이콘" label="커뮤니티" />
         <TabItem href="/store" src="/icons/store.svg" alt="상점 아이콘" label="상점" />
-        <TabItem href="/talk" src="/icons/talk.svg" alt="채팅 아이콘" label="채팅" />
+        {/* <TabItem href="/talk" src="/icons/talk.svg" alt="채팅 아이콘" label="채팅" /> */}
+        <TabItem href="/box" src="/icons/box.svg" alt="콘텐츠 아이콘" label="콘텐츠" />
         <TabItem href="/mypage" src="/icons/user.svg" alt="마이페이지 아이콘" label="마이페이지" />
       </ul>
     </nav>

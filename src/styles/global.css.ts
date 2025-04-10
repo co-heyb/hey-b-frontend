@@ -99,6 +99,21 @@ globalStyle('.mt-20', {
   },
 });
 
+globalStyle('.mt-30', {
+  marginTop: pxToVw(30),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(30, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginTop: pxToVw(30, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
 globalStyle('.mb-10', {
   marginBottom: pxToVw(10),
   '@media': {
@@ -125,6 +140,20 @@ globalStyle('.mb-20', {
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       marginBottom: pxToVw(20, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+globalStyle('.mb-30', {
+  marginBottom: pxToVw(30),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(30, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      marginBottom: pxToVw(30, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -159,6 +188,21 @@ globalStyle('.pt-20', {
   },
 });
 
+globalStyle('.pt-30', {
+  paddingTop: pxToVw(30),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(30, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      paddingTop: pxToVw(30, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+
 globalStyle('.pb-10', {
   paddingBottom: pxToVw(10),
   '@media': {
@@ -185,6 +229,20 @@ globalStyle('.pb-20', {
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       paddingBottom: pxToVw(20, DESKTOP_BREAKPOINT),
+    },
+  },
+});
+globalStyle('.pb-30', {
+  paddingBottom: pxToVw(30),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(30, TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      paddingBottom: pxToVw(30, DESKTOP_BREAKPOINT),
     },
   },
 });

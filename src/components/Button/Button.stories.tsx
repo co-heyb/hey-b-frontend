@@ -47,7 +47,9 @@ const meta: Meta<typeof Button> = {
 };
 export default meta;
 
-export const Default: StoryObj<typeof Button> = {
+type Story = StoryObj<typeof Button>;
+
+export const Default: Story = {
   parameters: {
     docs: {
       description: {
@@ -60,7 +62,7 @@ export const Default: StoryObj<typeof Button> = {
   },
 };
 
-export const Size: StoryObj<typeof Button> = {
+export const Size: Story = {
   args: {
     variant: 'filled',
     children: 'text',
@@ -80,7 +82,7 @@ export const Size: StoryObj<typeof Button> = {
   },
 };
 
-export const Variant: StoryObj<typeof Button> = {
+export const Variant: Story = {
   args: {
     size: 'small',
     children: 'text',
@@ -98,7 +100,7 @@ export const Variant: StoryObj<typeof Button> = {
   },
 };
 
-export const ColorFill: StoryObj<typeof Button> = {
+export const ColorFill: Story = {
   args: {
     size: 'small',
     children: 'text',
@@ -114,7 +116,7 @@ export const ColorFill: StoryObj<typeof Button> = {
   },
 };
 
-export const StyleDisabled: StoryObj<typeof Button> = {
+export const StyleDisabled: Story = {
   args: {
     size: 'small',
     children: 'text',
@@ -132,7 +134,7 @@ export const StyleDisabled: StoryObj<typeof Button> = {
   },
 };
 
-export const IconButton: StoryObj<typeof Button> = {
+export const IconButton: Story = {
   args: {
     size: 'extraSmall',
     radius: 'circle',
