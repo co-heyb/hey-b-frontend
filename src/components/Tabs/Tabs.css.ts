@@ -15,23 +15,24 @@ export const BaseTabsListStyle = style({
 export const TabsListStyle = styleVariants({
   underline: {},
   round: {
-    backgroundColor: vars.colors.lightCharcoal,
-    padding: pxToVw(4),
+    backgroundColor: vars.colors.background,
+
+    padding: 0,
     gap: pxToVw(4),
     borderRadius: pxToVw(12),
     '@media': {
       [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        padding: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+        padding: 0,
         gap: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
         borderRadius: pxToVw(12),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        padding: pxToVw(4, TABLET_BREAKPOINT),
+        padding: 0,
         gap: pxToVw(4, TABLET_BREAKPOINT),
         borderRadius: pxToVw(12, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        padding: pxToVw(4, DESKTOP_BREAKPOINT),
+        padding: 0,
         gap: pxToVw(4, DESKTOP_BREAKPOINT),
         borderRadius: pxToVw(12, DESKTOP_BREAKPOINT),
       },
@@ -74,7 +75,6 @@ export const TabsListStyle = styleVariants({
 });
 
 export const BaseTabsItemStyle = style({
-  borderBottom: `${pxToVw(3)} solid ${vars.colors.lightCharcoal}`,
   color: vars.colors.darkCharcoal,
   fontSize: pxToVw(16),
   fontWeight: 500,
@@ -92,21 +92,31 @@ export const BaseTabsItemStyle = style({
   },
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-      borderBottom: `${pxToVw(3, MOBILE_LARGE_BREAKPOINT)} solid ${vars.colors.lightCharcoal}`,
       fontSize: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-      borderBottom: `${pxToVw(3, TABLET_BREAKPOINT)} solid ${vars.colors.lightCharcoal}`,
       fontSize: pxToVw(16, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-      borderBottom: `${pxToVw(3, DESKTOP_BREAKPOINT)} solid ${vars.colors.lightCharcoal}`,
       fontSize: pxToVw(16, DESKTOP_BREAKPOINT),
     },
   },
 });
 export const TabsItemStyle = styleVariants({
-  underline: {},
+  underline: {
+    borderBottom: `${pxToVw(3)} solid ${vars.colors.lightCharcoal}`,
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        borderBottom: `${pxToVw(3, MOBILE_LARGE_BREAKPOINT)} solid ${vars.colors.lightCharcoal}`,
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        borderBottom: `${pxToVw(3, TABLET_BREAKPOINT)} solid ${vars.colors.lightCharcoal}`,
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        borderBottom: `${pxToVw(3, DESKTOP_BREAKPOINT)} solid ${vars.colors.lightCharcoal}`,
+      },
+    },
+  },
   round: {
     color: vars.colors.darkCharcoal,
     fontSize: pxToVw(14),
@@ -119,9 +129,6 @@ export const TabsItemStyle = styleVariants({
       ['&.active']: {
         backgroundColor: vars.colors.darkCharcoal,
         color: vars.colors.white,
-        boxShadow: `0px ${pxToVw(6)} ${pxToVw(6)} ${pxToVw(-6)} rgba(${
-          vars.rgbColors.darkCharcoal
-        } 0.16), 0px 0px 1px rgba(${vars.rgbColors.darkCharcoal} 0.4)`,
       },
     },
     '@media': {
@@ -129,30 +136,19 @@ export const TabsItemStyle = styleVariants({
         padding: pxToVw([7.5, 8], MOBILE_LARGE_BREAKPOINT),
         fontSize: pxToVw(14),
         borderRadius: pxToVw(8),
-        ['&.active']: {
-          boxShadow: `0px ${pxToVw(6)} ${pxToVw(6)} ${pxToVw(-6)} rgba(${
-            vars.rgbColors.darkCharcoal
-          } 0.16), 0px 0px 1px rgba(${vars.rgbColors.darkCharcoal} 0.4)`,
-        },
+        ['&.active']: {},
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
         padding: pxToVw([7.5, 8], TABLET_BREAKPOINT),
         fontSize: pxToVw(14),
         borderRadius: pxToVw(8),
-        ['&.active']: {
-          boxShadow: `0px ${pxToVw(6)} ${pxToVw(6)} ${pxToVw(-6)} rgba(${
-            vars.rgbColors.darkCharcoal
-          } 0.16), 0px 0px 1px rgba(${vars.rgbColors.darkCharcoal} 0.4)`,
-        },
+        ['&.active']: {},
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
         padding: pxToVw([7.5, 8], DESKTOP_BREAKPOINT),
         fontSize: pxToVw(14),
         borderRadius: pxToVw(8),
-        ['&.active']: {
-          boxShadow:
-            '0px 6px 6px -6px rgba(${vars.rgbColors.darkCharcoal} 0.16), 0px 0px 1px rgba(${vars.rgbColors.darkCharcoal} 0.4)',
-        },
+        ['&.active']: {},
       },
     },
   },

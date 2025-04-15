@@ -1,10 +1,10 @@
 'use client';
 
+import Button from '../Button';
 import { LiHTMLAttributes, PropsWithChildren } from 'react';
 import React from 'react';
 import { useTabsContext } from '.';
 import { TabProps } from './Tab';
-import Button from '../Button';
 import { BaseTabsItemStyle, TabsItemStyle, BaseTabItemButtonStyle, TabsItemButtonStyle } from './Tabs.css';
 
 export interface TabTitleProps extends PropsWithChildren<TabProps & LiHTMLAttributes<HTMLLIElement>> {

@@ -28,6 +28,9 @@ export const Default: Story = {
   },
   render: () => (
     <>
+      <div style={{ display: 'none' }}>
+        <Button>test</Button>
+      </div>
       <Tabs variant="underline">
         <Tabs.Tab>
           <Tabs.TabTitle>Tab 1</Tabs.TabTitle>
@@ -166,7 +169,6 @@ export const RectStyle: Story = {
             </Tabs.Contents>
           </Tabs.Tab>
         </Tabs>
-        <Button style={{ display: 'none' }}>test</Button>
       </>
     );
   },
