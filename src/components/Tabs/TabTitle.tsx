@@ -5,7 +5,7 @@ import { LiHTMLAttributes, PropsWithChildren } from 'react';
 import React from 'react';
 import { useTabsContext } from '.';
 import { TabProps } from './Tab';
-import { BaseTabsItemStyle, TabsItemStyle, BaseTabItemButtonStyle, TabsItemButtonStyle } from './Tabs.css';
+import { baseTabsItemStyle, tabsItemStyle, baseTabItemButtonStyle, tabsItemButtonStyle } from './Tabs.css';
 
 export interface TabTitleProps extends PropsWithChildren<TabProps & LiHTMLAttributes<HTMLLIElement>> {
   handleChange?: () => void;
@@ -21,7 +21,7 @@ const TabTitle = ({ children, isActive, index = 0, className, handleChange, ...p
 
   return (
     <li
-      className={`${BaseTabsItemStyle} ${TabsItemStyle[variant]} ${className || ''} ${isActive ? 'active' : ''}`}
+      className={`${baseTabsItemStyle} ${tabsItemStyle[variant]} ${className || ''} ${isActive ? 'active' : ''}`}
       {...props}
     >
       <Button
@@ -29,7 +29,7 @@ const TabTitle = ({ children, isActive, index = 0, className, handleChange, ...p
         radius="rect"
         variant="plain"
         wide
-        className={`${BaseTabItemButtonStyle} ${TabsItemButtonStyle[variant]}`}
+        className={`${baseTabItemButtonStyle} ${tabsItemButtonStyle[variant]}`}
         onClick={() => setActive(index)}
       >
         {children}

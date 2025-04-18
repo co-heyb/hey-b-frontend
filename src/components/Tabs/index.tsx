@@ -12,13 +12,13 @@ import React, {
 import { createContext, useContext } from 'react';
 import { Tab } from './Tab';
 import { TabContents } from './TabContents';
-import { TabsListStyle } from './Tabs.css';
+import { tabsListStyle } from './Tabs.css';
 import { TabTitle, TabTitleProps } from './TabTitle';
 
 export const TabsContext = createContext({
   activeIndex: 0,
   setActiveIndex: (index: number) => {},
-  variant: 'underline' as keyof typeof TabsListStyle,
+  variant: 'underline' as keyof typeof tabsListStyle,
 });
 
 const useTabsContext = () => {
@@ -27,7 +27,7 @@ const useTabsContext = () => {
 
 const { Provider } = TabsContext;
 
-const Tabs = ({ variant = 'underline', ...props }: PropsWithChildren<{ variant?: keyof typeof TabsListStyle }>) => {
+const Tabs = ({ variant = 'underline', ...props }: PropsWithChildren<{ variant?: keyof typeof tabsListStyle }>) => {
   const { children } = props;
   const TabArr = useMemo(() => React.Children.toArray(children), [children]);
   const [activeIndex, setActive] = useState(0);
