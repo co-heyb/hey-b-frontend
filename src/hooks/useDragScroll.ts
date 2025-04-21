@@ -7,7 +7,7 @@ interface Point {
   y: number;
 }
 
-const useDragScroll = (ref: React.RefObject<HTMLElement>, isList?: boolean) => {
+const useDragScroll = (ref: React.RefObject<HTMLElement>, isDraggable?: boolean) => {
   const startPoint = useRef<Point>({ x: 0, y: 0 });
   const isDragging = useRef<boolean>(false);
   const lastDeltaX = useRef<number | null>(null);
@@ -17,7 +17,7 @@ const useDragScroll = (ref: React.RefObject<HTMLElement>, isList?: boolean) => {
   const onPointerDown = (event: PointerEvent) => {
     isDragging.current = true;
     startPoint.current = { x: event.clientX, y: event.clientY };
-    if (ref.current && !isList) ref.current.style.cursor = 'grabbing';
+    if (ref.current && isDraggable) ref.current.style.cursor = 'grabbing';
     event.preventDefault();
     document.body.style.userSelect = 'none';
   };
@@ -52,7 +52,7 @@ const useDragScroll = (ref: React.RefObject<HTMLElement>, isList?: boolean) => {
 
   const onPointerUp = (event: MouseEvent) => {
     isDragging.current = false;
-    if (ref.current && !isList) ref.current.style.cursor = 'grab';
+    if (ref.current && isDraggable) ref.current.style.cursor = 'grab';
 
     preventClick.current = true;
     document.body.style.userSelect = 'auto';

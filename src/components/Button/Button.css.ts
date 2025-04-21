@@ -239,7 +239,7 @@ const buttonVariants = {
       },
     },
     plain: {
-      background: vars.colors.white,
+      background: 'transparent',
       color: vars.colors.charcoal,
       padding: 0,
       '@media': {
@@ -258,7 +258,7 @@ const buttonVariants = {
       },
     },
     plainRect: {
-      background: vars.colors.white,
+      background: 'transparent',
       padding: pxToVw(6),
       '@media': {
         [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {

@@ -43,7 +43,7 @@ export const theme = {
     softMint: '#78C6C4', // 버튼 호버, 강조된 배경
     lightMint: '#B7D3D2', // 탐색 페이지 배경
     beige: '#EDC7B7', // 강조 배경
-    background: '#F7F7F7',
+    background: '#DEDEDE',
     white: '#FFFFFF',
     black: '#000000',
   },
@@ -59,7 +59,7 @@ export const theme = {
     softMint: '120, 198, 196',
     lightMint: '183, 211, 210',
     beige: '237, 199, 183',
-    background: '247, 247, 247',
+    background: '222, 222, 222',
     white: '255, 255, 255',
     black: '0, 0, 0',
   },

@@ -1,4 +1,4 @@
-export type UserProfileType = 'list' | 'profile' | 'comment' | 'detail';
+export type UserProfileType = 'list' | 'profile' | 'comment' | 'detail' | 'preview';
 export interface ProfileCharacter {
   id: string;
   name: string;

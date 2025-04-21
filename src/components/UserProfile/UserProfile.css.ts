@@ -5,6 +5,7 @@ import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT 
 export const userProfileBase = style({
   position: 'relative',
   display: 'flex',
+  width: '100%',
   flexWrap: 'wrap',
   flexDirection: 'row',
   alignItems: 'center',
@@ -13,6 +14,7 @@ export const userProfileBase = style({
 export const userProfile = styleVariants({
   list: {},
   detail: {},
+  preview: {},
   comment: {},
   profile: {},
 });
@@ -25,6 +27,7 @@ export const userProfileImgBase = style({
   borderRadius: '50%',
   border: `1px solid ${vars.colors.charcoal}`,
   flexShrink: 0,
+  alignSelf: 'center',
 });
 export const userProfileImg = styleVariants({
   list: {
@@ -36,12 +39,12 @@ export const userProfileImg = styleVariants({
         height: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        width: pxToVw(30, TABLET_BREAKPOINT),
-        height: pxToVw(30, TABLET_BREAKPOINT),
+        width: pxToVw(34, TABLET_BREAKPOINT),
+        height: pxToVw(34, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        width: pxToVw(30, DESKTOP_BREAKPOINT),
-        height: pxToVw(30, DESKTOP_BREAKPOINT),
+        width: pxToVw(38, DESKTOP_BREAKPOINT),
+        height: pxToVw(38, DESKTOP_BREAKPOINT),
       },
     },
   },
@@ -54,12 +57,30 @@ export const userProfileImg = styleVariants({
         height: pxToVw(24, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        width: pxToVw(24, TABLET_BREAKPOINT),
-        height: pxToVw(24, TABLET_BREAKPOINT),
+        width: pxToVw(28, TABLET_BREAKPOINT),
+        height: pxToVw(28, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        width: pxToVw(24, DESKTOP_BREAKPOINT),
-        height: pxToVw(24, DESKTOP_BREAKPOINT),
+        width: pxToVw(32, DESKTOP_BREAKPOINT),
+        height: pxToVw(32, DESKTOP_BREAKPOINT),
+      },
+    },
+  },
+  preview: {
+    width: pxToVw(16),
+    height: pxToVw(16),
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        width: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
+        height: pxToVw(16, MOBILE_LARGE_BREAKPOINT),
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        width: pxToVw(20, TABLET_BREAKPOINT),
+        height: pxToVw(20, TABLET_BREAKPOINT),
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        width: pxToVw(20, DESKTOP_BREAKPOINT),
+        height: pxToVw(20, DESKTOP_BREAKPOINT),
       },
     },
   },
@@ -75,12 +96,12 @@ export const userProfileImg = styleVariants({
         height: pxToVw(30, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        width: pxToVw(30, TABLET_BREAKPOINT),
-        height: pxToVw(30, TABLET_BREAKPOINT),
+        width: pxToVw(34, TABLET_BREAKPOINT),
+        height: pxToVw(34, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        width: pxToVw(30, DESKTOP_BREAKPOINT),
-        height: pxToVw(30, DESKTOP_BREAKPOINT),
+        width: pxToVw(38, DESKTOP_BREAKPOINT),
+        height: pxToVw(38, DESKTOP_BREAKPOINT),
       },
     },
   },
@@ -93,12 +114,12 @@ export const userProfileImg = styleVariants({
         height: pxToVw(50, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        width: pxToVw(50, TABLET_BREAKPOINT),
-        height: pxToVw(50, TABLET_BREAKPOINT),
+        width: pxToVw(54, TABLET_BREAKPOINT),
+        height: pxToVw(54, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        width: pxToVw(50, DESKTOP_BREAKPOINT),
-        height: pxToVw(50, DESKTOP_BREAKPOINT),
+        width: pxToVw(58, DESKTOP_BREAKPOINT),
+        height: pxToVw(58, DESKTOP_BREAKPOINT),
       },
     },
   },
@@ -116,10 +137,10 @@ export const userProfileNameBase = style({
           marginLeft: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
         },
         [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-          marginLeft: pxToVw(10, TABLET_BREAKPOINT),
+          marginLeft: pxToVw(14, TABLET_BREAKPOINT),
         },
         [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-          marginLeft: pxToVw(10, DESKTOP_BREAKPOINT),
+          marginLeft: pxToVw(18, DESKTOP_BREAKPOINT),
         },
       },
     },
@@ -134,10 +155,10 @@ export const userProfileName = styleVariants({
         fontSize: pxToVw(18, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(18, TABLET_BREAKPOINT),
+        fontSize: pxToVw(20, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(18, DESKTOP_BREAKPOINT),
+        fontSize: pxToVw(24, DESKTOP_BREAKPOINT),
       },
     },
   },
@@ -148,10 +169,40 @@ export const userProfileName = styleVariants({
         fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+        fontSize: pxToVw(16, TABLET_BREAKPOINT),
+      },
+      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+        fontSize: pxToVw(20, DESKTOP_BREAKPOINT),
+      },
+    },
+  },
+  preview: {
+    fontSize: pxToVw(12),
+    '@media': {
+      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+        fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
+      },
+      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
         fontSize: pxToVw(14, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+        fontSize: pxToVw(18, DESKTOP_BREAKPOINT),
+      },
+    },
+    selectors: {
+      [`${userProfileImgBase} + &`]: {
+        marginLeft: pxToVw(4),
+        '@media': {
+          [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+            marginLeft: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+          },
+          [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+            marginLeft: pxToVw(4, TABLET_BREAKPOINT),
+          },
+          [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+            marginLeft: pxToVw(4, DESKTOP_BREAKPOINT),
+          },
+        },
       },
     },
   },
@@ -162,10 +213,10 @@ export const userProfileName = styleVariants({
         fontSize: pxToVw(14, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(14, TABLET_BREAKPOINT),
+        fontSize: pxToVw(16, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(14, DESKTOP_BREAKPOINT),
+        fontSize: pxToVw(20, DESKTOP_BREAKPOINT),
       },
     },
     selectors: {
@@ -176,10 +227,10 @@ export const userProfileName = styleVariants({
             marginLeft: pxToVw(40, MOBILE_LARGE_BREAKPOINT),
           },
           [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-            marginLeft: pxToVw(40, TABLET_BREAKPOINT),
+            marginLeft: pxToVw(44, TABLET_BREAKPOINT),
           },
           [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-            marginLeft: pxToVw(40, DESKTOP_BREAKPOINT),
+            marginLeft: pxToVw(48, DESKTOP_BREAKPOINT),
           },
         },
       },
@@ -192,10 +243,10 @@ export const userProfileName = styleVariants({
         fontSize: pxToVw(18, MOBILE_LARGE_BREAKPOINT),
       },
       [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(18, TABLET_BREAKPOINT),
+        fontSize: pxToVw(20, TABLET_BREAKPOINT),
       },
       [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        fontSize: pxToVw(18, DESKTOP_BREAKPOINT),
+        fontSize: pxToVw(24, DESKTOP_BREAKPOINT),
       },
     },
   },
@@ -210,10 +261,10 @@ export const userProfileDescBase = style({
       fontSize: pxToVw(12, MOBILE_LARGE_BREAKPOINT),
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-      fontSize: pxToVw(12, TABLET_BREAKPOINT),
+      fontSize: pxToVw(14, TABLET_BREAKPOINT),
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-      fontSize: pxToVw(12, DESKTOP_BREAKPOINT),
+      fontSize: pxToVw(16, DESKTOP_BREAKPOINT),
     },
   },
 });
@@ -221,6 +272,7 @@ export const userProfileDescBase = style({
 export const userProfileDesc = styleVariants({
   list: {},
   detail: {},
+  preview: {},
   comment: {},
   profile: {},
 });
@@ -246,6 +298,7 @@ export const userProfileFollowBtnBase = style({
 export const userProfileFollowBtn = styleVariants({
   list: {},
   detail: {},
+  preview: {},
   comment: {},
   profile: {},
 });
@@ -254,6 +307,7 @@ export const userProfileWrapBase = style({ display: 'flex', alignItems: 'center'
 export const userProfileWrap = styleVariants({
   list: {},
   detail: {},
+  preview: {},
   comment: {},
   profile: { flexDirection: 'column', alignItems: 'flex-start' },
 });

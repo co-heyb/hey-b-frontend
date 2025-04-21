@@ -12,9 +12,9 @@ const meta: Meta<typeof UserProfile> = {
   argTypes: {
     type: {
       control: 'select',
-      options: ['list', 'detail', 'comment', 'profile'],
+      options: ['list', 'detail', 'preview', 'comment', 'profile'],
       description:
-        'UserProfile의 타입을 결정합니다. UserProfile 컴포넌트는 `list`, `detail`, `comment`, `profile` 네 가지 타입을 지원합니다.',
+        'UserProfile의 타입을 결정합니다. UserProfile 컴포넌트는 `list`, `detail`, `preview`, `comment`, `profile` 다섯 가지 타입을 지원합니다.',
     },
   },
 };
@@ -42,6 +42,22 @@ export const ListStyle: Story = {
 export const DetailStyle: Story = {
   args: {
     type: 'detail',
+  },
+  render: (args) => (
+    <UserProfile {...args}>
+      <UserProfile.Wrap>
+        <UserProfile.Link href={'/'}>
+          <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
+          <UserProfile.Name>delay</UserProfile.Name>
+        </UserProfile.Link>
+      </UserProfile.Wrap>
+      <UserProfile.FollowBtn isFollowing={true} />
+    </UserProfile>
+  ),
+};
+export const previewStyle: Story = {
+  args: {
+    type: 'preview',
   },
   render: (args) => (
     <UserProfile {...args}>
@@ -88,7 +104,7 @@ export const ProfileStyle: Story = {
             <Icon src={'/icons/export.svg'} alt={'링크보내기'} size="small" />
           </Button>
         </UserProfile.Name>
-        <span>팔로워 500명</span>
+        <UserProfile.Desc>팔로워 500명</UserProfile.Desc>
       </UserProfile.Wrap>
       <UserProfile.Img src={'/images/banner.png'} alt={'프로필 이미지'} />
       <UserProfile.FollowBtn isFollowing={true} wide={true} />
