@@ -1,13 +1,12 @@
 'use client';
 
-import { PropsWithChildren } from 'react';
 import { baseTabsListStyle, tabsListStyle } from './Tabs.css';
 import { useTabsContext } from '.';
+import { componentPropsType } from '@/types';
 
 export interface TabProps {
   isActive?: boolean;
   index?: number;
-  className?: string;
 }
 /**
  * @example <Tabs>
@@ -23,7 +22,7 @@ export interface TabProps {
  * @property children  <Tabs.Contents> 탭 컨텐츠 영역 </Tabs.Contents>
  * @property className* isActive: 초기 랜더링 시 액티브 여부
  */
-const Tab = ({ className, ...props }: PropsWithChildren<TabProps>) => {
+const Tab = ({ className, ...props }: componentPropsType.ComponentBaseProps<TabProps>) => {
   const { children } = props;
   const { variant } = useTabsContext();
 

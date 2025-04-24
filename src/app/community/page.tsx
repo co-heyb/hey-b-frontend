@@ -2,6 +2,7 @@ import Button from '@/components/Button';
 import Icon from '@/components/Icon';
 import InputBar from '@/components/InputBar';
 import Post from '@/components/Post';
+import TiptapEditor from '@/components/TiptapEditor';
 import UserProfile from '@/components/UserProfile';
 import Link from 'next/link';
 
@@ -24,6 +25,13 @@ export default function Home() {
           <Post.Content>게시물 내용이 여기에 들어갑니다.</Post.Content>
           <Post.Comment>댓글 내용</Post.Comment>
         </Post>
+
+        <InputBar status="error">
+          <InputBar.Label>ID</InputBar.Label>
+          <InputBar.Input />
+          <InputBar.Helper>helper text</InputBar.Helper>
+        </InputBar>
+        <TiptapEditor />
       </main>
     </div>
   );

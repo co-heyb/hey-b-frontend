@@ -1,8 +1,12 @@
 import { InputHTMLAttributes } from 'react';
 import { input, inputWrap } from './InputBar.css';
 import React from 'react';
+import { componentPropsType } from '@/types';
 
-const Input = ({ children, ...props }: React.PropsWithChildren & InputHTMLAttributes<HTMLInputElement>) => {
+const Input = ({
+  children,
+  ...props
+}: componentPropsType.ComponentBaseProps<InputHTMLAttributes<HTMLInputElement>>) => {
   return (
     <div className={inputWrap}>
       <input className={input} placeholder="" {...props} />

@@ -1,3 +1,4 @@
+import ContentsTabs from '@/components/\bPageComponents/Contents';
 import Button from '@/components/Button';
 import Icon from '@/components/Icon';
 import UserProfile from '@/components/UserProfile';
@@ -5,9 +6,7 @@ import UserProfile from '@/components/UserProfile';
 export default function Home() {
   return (
     <div className="container">
-      <h2 className="mb-20">마이페이지</h2>
-
-      <div>
+      <div className="mb-20">
         <UserProfile type="profile">
           <UserProfile.Wrap>
             <UserProfile.Name>
@@ -22,14 +21,7 @@ export default function Home() {
           <UserProfile.FollowBtn isFollowing={true} wide={true} />
         </UserProfile>
       </div>
-      <div className="flex-center gap-10">
-        <Button size="medium" colorFill="mint" wide>
-          로그인
-        </Button>
-        <Button size="medium" wide>
-          회원가입
-        </Button>
-      </div>
+      <ContentsTabs />
     </div>
   );
 }

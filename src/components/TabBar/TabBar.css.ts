@@ -64,4 +64,5 @@ export const tabItemLink = style({
   flex: 1,
   color: 'inherit',
   fontWeight: 'inherit',
+  gap: 0,
 });

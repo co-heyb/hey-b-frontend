@@ -1,7 +1,7 @@
-import { PropsWithChildren } from 'react';
+import { componentPropsType } from '@/types';
 import { comment } from './Comment.css';
 
-const Comment = ({ children }: PropsWithChildren) => {
+const Comment = ({ children }: componentPropsType.ComponentBaseProps) => {
   return <div className={comment}>{children}</div>;
 };
 

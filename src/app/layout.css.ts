@@ -12,17 +12,12 @@ export const container = style({
   flexGrow: 1,
   flexDirection: 'column',
   width: '100%',
-  padding: pxToVw([16]),
   overflowY: 'auto',
+
   '@media': {
-    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-      padding: pxToVw([16], MOBILE_LARGE_BREAKPOINT),
-    },
-    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-      padding: pxToVw([24], TABLET_BREAKPOINT),
-    },
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {},
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {},
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-      padding: pxToVw([24], DESKTOP_BREAKPOINT),
       maxWidth: '1200px',
       margin: '0 auto',
     },

@@ -1,9 +1,14 @@
 'use client';
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import { HTMLAttributes } from 'react';
 import { baseTabsContentStyle, tabsContentStyle } from './Tabs.css';
 import { useTabsContext } from '.';
+import { componentPropsType } from '@/types';
 
-const TabContents = ({ children, className, ...props }: PropsWithChildren & HTMLAttributes<HTMLDivElement>) => {
+const TabContents = ({
+  children,
+  className,
+  ...props
+}: componentPropsType.ComponentBaseProps & HTMLAttributes<HTMLDivElement>) => {
   const { variant } = useTabsContext();
 
   return (

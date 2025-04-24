@@ -10,6 +10,34 @@ export const userProfileBase = style({
   flexDirection: 'row',
   alignItems: 'center',
   justifyContent: 'space-between',
+  selectors: {
+    ['& + &']: {
+      marginTop: pxToVw(10),
+    },
+  },
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      selectors: {
+        ['& + &']: {
+          marginTop: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+        },
+      },
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      selectors: {
+        ['& + &']: {
+          marginTop: pxToVw(10, TABLET_BREAKPOINT),
+        },
+      },
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      selectors: {
+        ['& + &']: {
+          marginTop: pxToVw(10, DESKTOP_BREAKPOINT),
+        },
+      },
+    },
+  },
 });
 export const userProfile = styleVariants({
   list: {},

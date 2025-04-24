@@ -22,7 +22,7 @@ const LoginPage = () => {
   const [autoLogin, setAutoLogin] = useState(false);
 
   return (
-    <section className="center-container">
+    <section className="container center-container">
       <Image
         src={'/images/logo_bubble.svg'}
         width={110}

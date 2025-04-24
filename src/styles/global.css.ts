@@ -7,6 +7,23 @@ globalStyle('*:focus-visible ', {
   outline: `1px auto ${vars.colors.mint}`,
 });
 
+globalStyle('.container', {
+  padding: pxToVw([16]),
+  '@media': {
+    [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+      padding: pxToVw([16], MOBILE_LARGE_BREAKPOINT),
+    },
+    [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+      padding: pxToVw([24], TABLET_BREAKPOINT),
+    },
+    [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+      padding: pxToVw([24], DESKTOP_BREAKPOINT),
+      maxWidth: '1200px',
+      margin: '0 auto',
+    },
+  },
+});
+
 globalStyle('.center-container', {
   display: 'flex',
   flexDirection: 'column',

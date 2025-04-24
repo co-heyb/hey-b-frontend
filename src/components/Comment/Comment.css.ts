@@ -4,6 +4,7 @@ import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT 
 
 export const comment = style({
   fontSize: pxToVw(12),
+  width: '100%',
 
   selectors: {
     [`${userProfileBase} &`]: {

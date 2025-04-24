@@ -1,13 +1,15 @@
 'use client';
 
 import Button from '../Button';
-import { LiHTMLAttributes, PropsWithChildren } from 'react';
+import { LiHTMLAttributes } from 'react';
 import React from 'react';
 import { useTabsContext } from '.';
 import { TabProps } from './Tab';
 import { baseTabsItemStyle, tabsItemStyle, baseTabItemButtonStyle, tabsItemButtonStyle } from './Tabs.css';
+import { componentPropsType } from '@/types';
 
-export interface TabTitleProps extends PropsWithChildren<TabProps & LiHTMLAttributes<HTMLLIElement>> {
+export interface TabTitleProps
+  extends componentPropsType.ComponentBaseProps<TabProps & LiHTMLAttributes<HTMLLIElement>> {
   handleChange?: () => void;
 }
 const TabTitle = ({ children, isActive, index = 0, className, handleChange, ...props }: TabTitleProps) => {

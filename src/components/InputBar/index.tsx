@@ -4,6 +4,7 @@ import Input from './Input';
 import InputLabel from './InputLabel';
 import InputHelper from './InputHelper';
 import InputButtons from './InputButtons';
+import { componentPropsType } from '@/types';
 
 type InputBarTypes = NonNullable<InputBarVariants>;
 
@@ -15,7 +16,7 @@ const InputBar = ({
   children,
   status,
   ...props
-}: React.PropsWithChildren<InputBarProps & InputHTMLAttributes<HTMLInputElement>>) => {
+}: componentPropsType.ComponentBaseProps<InputBarProps & InputHTMLAttributes<HTMLInputElement>>) => {
   return (
     <div className={inputBar({ status })} {...props}>
       {children}

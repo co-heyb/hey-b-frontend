@@ -2,7 +2,7 @@ import { vars } from '@/styles/theme.css';
 import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from '@/styles/px-to-vw.css';
 import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
-const buttonBase = {
+export const buttonBase = {
   display: 'flex',
   alignItems: 'center',
   alignSelf: 'center',
@@ -35,7 +35,7 @@ const buttonBase = {
   },
 };
 
-const buttonVariants = {
+export const buttonVariants = {
   size: {
     extraSmall: {
       padding: pxToVw([4, 8]),

@@ -4,6 +4,7 @@ import InputHelper from './InputHelper';
 import Icon from '../Icon';
 import Input from './Input';
 import { setChildrenWithProps } from '@/lib/utils/setChildrenWithProps';
+import { componentPropsType } from '@/types';
 
 type InputToggleTypes = NonNullable<InputToggleVariants>;
 
@@ -21,7 +22,7 @@ const InputToggle = ({
 
   name,
   ...props
-}: React.PropsWithChildren<InputToggleProps> & HTMLAttributes<HTMLDivElement>) => {
+}: componentPropsType.ComponentBaseProps<InputToggleProps & HTMLAttributes<HTMLDivElement>>) => {
   const autoName = useId();
   return (
     <div className={inputToggle({ status, direction })} {...props}>

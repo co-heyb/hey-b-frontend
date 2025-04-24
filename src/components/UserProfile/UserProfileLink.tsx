@@ -1,15 +1,15 @@
 import Link, { LinkProps } from 'next/link';
-import { PropsWithChildren } from 'react';
 import { userProfileLinkBase } from './UserProfile.css';
 import { UserProfileProps } from '.';
 import { setChildrenWithProps } from '@/lib/utils/setChildrenWithProps';
+import { componentPropsType } from '@/types';
 
 const UserProfileLink = ({
   href,
   type = 'list',
   children,
   ...props
-}: PropsWithChildren<UserProfileProps & LinkProps>) => {
+}: componentPropsType.ComponentBaseProps<UserProfileProps & LinkProps>) => {
   return (
     <Link href={href} className={userProfileLinkBase} {...props}>
       {setChildrenWithProps(children, { type })}

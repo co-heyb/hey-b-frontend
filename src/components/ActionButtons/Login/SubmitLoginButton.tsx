@@ -2,8 +2,8 @@ import api from '@/lib/api';
 import store from '@/stores';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Button from '@/components/Button';
-import { LoginPayload } from '@/types/modules/auth';
-import { ButtonHTMLAttributes, PropsWithChildren } from 'react';
+import { ButtonHTMLAttributes } from 'react';
+import { authType, componentPropsType } from '@/types';
 
 const SubmitLoginButton = ({
   children,
@@ -11,7 +11,7 @@ const SubmitLoginButton = ({
   password,
   autoLogin,
   ...props
-}: PropsWithChildren<LoginPayload> & ButtonHTMLAttributes<HTMLButtonElement>) => {
+}: componentPropsType.ComponentBaseProps<authType.LoginPayload> & ButtonHTMLAttributes<HTMLButtonElement>) => {
   const router = useRouter();
 
   const handleLogin = async () => {

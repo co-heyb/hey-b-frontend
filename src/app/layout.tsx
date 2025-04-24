@@ -8,6 +8,7 @@ import '@/styles/global.css';
 import type { Metadata } from 'next';
 import { container, wrap } from './layout.css';
 import AuthInitializer from '@/components/AuthInitializer';
+import { componentPropsType } from '@/types';
 
 export const metadata: Metadata = {
   title: 'HeyB - 작은 시작이 만드는 새로운 즐거움',
@@ -61,7 +62,7 @@ export const metadata: Metadata = {
 //   variable: '--font-pretendard',
 // });
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+export default function RootLayout({ children }: componentPropsType.ComponentBaseProps) {
   return (
     <html lang="ko">
       <body>

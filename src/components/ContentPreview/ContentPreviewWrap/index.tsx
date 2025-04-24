@@ -1,6 +1,9 @@
-import { createContext, PropsWithChildren, useContext, useEffect, useRef } from 'react';
+'use client';
+
+import { createContext, useContext, useEffect, useRef } from 'react';
 import { baseContentPreviewWrapStyle, contentPreviewWrapStyle } from '../ContentPreview.css';
 import useDragScroll from '@/hooks/useDragScroll';
+import { componentPropsType } from '@/types';
 
 export interface ContentPreviewWrapProps {
   variant?: keyof typeof contentPreviewWrapStyle;
@@ -15,7 +18,11 @@ const useContentPreviewWrapContext = () => {
 };
 const { Provider } = ContentPreviewWrapContext;
 
-const ContentPreviewWrap = ({ children, variant = 'list', ...props }: PropsWithChildren<ContentPreviewWrapProps>) => {
+const ContentPreviewWrap = ({
+  children,
+  variant = 'list',
+  ...props
+}: componentPropsType.ComponentBaseProps<ContentPreviewWrapProps>) => {
   const value = {
     variant,
   };

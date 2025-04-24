@@ -1,5 +1,6 @@
+'use client';
+
 import Link from 'next/link';
-import { PropsWithChildren } from 'react';
 import { UrlObject } from 'url';
 import { baseContentPreviewStyle, contentPreviewStyle } from './ContentPreview.css';
 import { ContentPreviewWrap, useContentPreviewWrapContext } from './ContentPreviewWrap';
@@ -9,6 +10,9 @@ import { ContentPreviewDesc } from './ContentPreviewContents/ContentPreviewDesc'
 import { ContentPreviewActions } from './ContentPreviewContents/ContentPreviewActions';
 import { Thumbnail } from '../Thumbnail';
 import ContentPreviewContents from './ContentPreviewContents';
+import { componentPropsType } from '@/types';
+import ThumbnailLabel from '../Thumbnail/ThumbnailLabel';
+import { ContentPreviewPriceSale } from './ContentPreviewContents/ContentPreviewPrice/ContentPreviewPriceSale';
 
 /**
  * 
@@ -33,15 +37,15 @@ import ContentPreviewContents from './ContentPreviewContents';
         </ContentPreview.Desc>
         <ContentPreview.Price>
           10,000원
-        <ContentPreview.Price.sale>
+        <ContentPreview.PriceSale>
           20%
-        </ContentPreview.Price.sale>
+        </ContentPreview.PriceSale>
         </ContentPreview.Price>
       </ContentPreview.Contents>
     </ContentPreview>
     </ContentPreview.Wrap>
  */
-const ContentPreview = (props: PropsWithChildren<{ href?: string | UrlObject }>) => {
+const ContentPreview = (props: componentPropsType.ComponentBaseProps<{ href?: string | UrlObject }>) => {
   const { children, href } = props;
   const { variant } = useContentPreviewWrapContext();
 
@@ -66,4 +70,5 @@ ContentPreview.Actions = ContentPreviewActions;
 ContentPreview.Title = ContentPreviewTitle;
 ContentPreview.Desc = ContentPreviewDesc;
 ContentPreview.Price = ContentPreviewPrice;
+
 export { ContentPreview };

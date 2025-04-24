@@ -1,9 +1,9 @@
-import { PropsWithChildren } from 'react';
 import { thumbnailImageStyle, thumbnailStyle, thumbnailWrapStyle } from './Thumbnail.css';
 import Image, { ImageProps } from 'next/image';
 import ThumbnailLabel from './ThumbnailLabel';
+import { componentPropsType } from '@/types';
 
-const Thumbnail = ({ children, src, alt, ...props }: PropsWithChildren<ImageProps>) => {
+const Thumbnail = ({ children, src, alt, ...props }: componentPropsType.ComponentBaseProps<ImageProps>) => {
   return (
     <>
       <div className={thumbnailWrapStyle} {...props}>

@@ -1,9 +1,9 @@
-import { HTMLAttributes, PropsWithChildren } from 'react';
+import { HTMLAttributes } from 'react';
 import { userProfile, userProfileBase } from './UserProfile.css';
 import { UserProfileImg } from './UserProfileImg';
 import { UserProfileName } from './UserProfileName';
 import { UserProfileFollowBtn } from './UserProfileFollowBtn';
-import { userType } from '@/types';
+import { componentPropsType, userType } from '@/types';
 import { setChildrenWithProps } from '@/lib/utils/setChildrenWithProps';
 import { UserProfileWrap } from './UserProfileWrap';
 import UserProfileLink from './UserProfileLink';
@@ -17,7 +17,7 @@ export const UserProfile = ({
   type = 'list',
   children,
   ...props
-}: PropsWithChildren<UserProfileProps> & HTMLAttributes<HTMLDivElement>) => {
+}: componentPropsType.ComponentBaseProps<UserProfileProps> & HTMLAttributes<HTMLDivElement>) => {
   return (
     <div className={`${userProfileBase} ${userProfile[type]}`} {...props}>
       {setChildrenWithProps(children, { type })}

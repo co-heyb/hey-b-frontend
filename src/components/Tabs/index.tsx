@@ -1,19 +1,12 @@
 'use client';
 
-import React, {
-  NamedExoticComponent,
-  PropsWithChildren,
-  ReactElement,
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from 'react';
+import React, { NamedExoticComponent, ReactElement, useCallback, useEffect, useMemo, useState } from 'react';
 import { createContext, useContext } from 'react';
 import { Tab } from './Tab';
 import { TabContents } from './TabContents';
 import { tabsListStyle } from './Tabs.css';
 import { TabTitle, TabTitleProps } from './TabTitle';
+import { componentPropsType } from '@/types';
 
 export const TabsContext = createContext({
   activeIndex: 0,
@@ -27,7 +20,10 @@ const useTabsContext = () => {
 
 const { Provider } = TabsContext;
 
-const Tabs = ({ variant = 'underline', ...props }: PropsWithChildren<{ variant?: keyof typeof tabsListStyle }>) => {
+const Tabs = ({
+  variant = 'underline',
+  ...props
+}: componentPropsType.ComponentBaseProps<{ variant?: keyof typeof tabsListStyle }>) => {
   const { children } = props;
   const TabArr = useMemo(() => React.Children.toArray(children), [children]);
   const [activeIndex, setActive] = useState(0);
@@ -71,6 +67,7 @@ const Tabs = ({ variant = 'underline', ...props }: PropsWithChildren<{ variant?:
     </Provider>
   );
 };
+
 Tabs.Wrap = Tabs;
 Tabs.TabTitle = TabTitle;
 Tabs.Tab = Tab;
