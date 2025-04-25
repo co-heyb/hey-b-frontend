@@ -27,6 +27,7 @@
     "@vanilla-extract/css": "^1.17.1",
     "@vanilla-extract/recipes": "^0.5.5",
     "@vanilla-extract/webpack-plugin": "^2.3.18",
+    "dayjs": "^1.11.13",
     "jsonwebtoken": "^9.0.2",
     "mini-css-extract-plugin": "^2.9.2",
     "next": "15.0.3",
