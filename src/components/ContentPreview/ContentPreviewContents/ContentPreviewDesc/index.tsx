@@ -1,14 +1,16 @@
-'use client';
-
-import { useContentPreviewWrapContext } from '../../ContentPreviewWrap';
 import { baseContentPreviewDescStyle, contentPreviewDescStyle } from '../../ContentPreview.css';
 import { componentPropsType } from '@/types';
+import { ContentPreviewProps } from '../..';
 
-const ContentPreviewDesc = ({ children, ...props }: componentPropsType.ComponentBaseProps) => {
-  const { variant } = useContentPreviewWrapContext();
+const ContentPreviewDesc = ({
+  children,
+  variant = 'list',
+  ...props
+}: componentPropsType.ComponentBaseProps<ContentPreviewProps>) => {
+  // const { variant } = useContentPreviewWrapContext();
 
   return (
-    <p className={`${baseContentPreviewDescStyle} ${contentPreviewDescStyle[variant]}`} {...props}>
+    <p className={`${baseContentPreviewDescStyle} ${contentPreviewDescStyle}`} {...props}>
       {children}
     </p>
   );

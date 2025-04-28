@@ -6,7 +6,7 @@ import Button from '../Button';
 import Icon from '../Icon';
 import UserProfile from '../UserProfile';
 
-const meta: Meta<typeof ContentPreviewWrap> = {
+const meta: Meta<typeof ContentPreview> = {
   title: 'Components/ContentPreview',
   component: ContentPreview,
   argTypes: {
@@ -20,7 +20,7 @@ const meta: Meta<typeof ContentPreviewWrap> = {
 
 export default meta;
 
-type Story = StoryObj<typeof ContentPreviewWrap>;
+type Story = StoryObj<typeof ContentPreview>;
 
 export const Default: Story = {
   args: {
@@ -28,9 +28,9 @@ export const Default: Story = {
   },
   render: (args) => {
     return (
-      <ContentPreview.Wrap variant={args.variant}>
+      <ContentPreview.Wrap isSlide={args.variant === 'slide'}>
         {[...Array(6)].map((data, index) => (
-          <ContentPreview key={index}>
+          <ContentPreview variant={args.variant} key={index}>
             <ContentPreview.Thumbnail width={1200} height={640} src={'/images/banner.png'} alt={'썸네일 이미지'}>
               <ContentPreview.Thumbnail.Label> wideLabel </ContentPreview.Thumbnail.Label>
               <ContentPreview.Actions>

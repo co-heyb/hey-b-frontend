@@ -1,5 +1,3 @@
-'use client';
-
 import Button from '@/components/Button';
 import { ContentPreview } from '@/components/ContentPreview';
 import Icon from '@/components/Icon';
@@ -8,9 +6,9 @@ import { priceFormat } from '@/lib/utils/formats';
 
 const HobbyCourse = () => {
   return (
-    <ContentPreview.Wrap variant="slide">
+    <ContentPreview.Wrap isSlide={true}>
       {[...Array(6)].map((data, index) => (
-        <ContentPreview key={index}>
+        <ContentPreview variant="slide" key={index}>
           <ContentPreview.Thumbnail width={1200} height={640} src={'/images/banner.png'} alt={'썸네일 이미지'}>
             <ContentPreview.Thumbnail.Label> wideLabel </ContentPreview.Thumbnail.Label>
             <ContentPreview.Actions>

@@ -1,9 +1,7 @@
-'use client';
-
 import Link from 'next/link';
 import { UrlObject } from 'url';
-import { baseContentPreviewStyle, contentPreviewStyle } from './ContentPreview.css';
-import { ContentPreviewWrap, useContentPreviewWrapContext } from './ContentPreviewWrap';
+import { baseContentPreviewStyle, contentPreviewStyle, ContentPreviewStyleVariants } from './ContentPreview.css';
+import { ContentPreviewWrap } from './ContentPreviewWrap';
 import { ContentPreviewTitle } from './ContentPreviewContents/ContentPreviewTitle';
 import { ContentPreviewPrice } from './ContentPreviewContents/ContentPreviewPrice';
 import { ContentPreviewDesc } from './ContentPreviewContents/ContentPreviewDesc';
@@ -13,11 +11,15 @@ import ContentPreviewContents from './ContentPreviewContents';
 import { componentPropsType } from '@/types';
 import ThumbnailLabel from '../Thumbnail/ThumbnailLabel';
 import { ContentPreviewPriceSale } from './ContentPreviewContents/ContentPreviewPrice/ContentPreviewPriceSale';
+import { setChildrenWithProps } from '@/lib/utils/setChildrenWithProps';
+export interface ContentPreviewProps {
+  variant?: NonNullable<ContentPreviewStyleVariants>['variant'];
+}
 
 /**
  * 
- * @example  <ContentPreview.Wrap>
-    <ContentPreview>
+ * @example  <ContentPreview.Wrap slide>
+    <ContentPreview variant="slide">
       <ContentPreview.Thumbnail>
         <WideLabelStyle> wideLabel </WideLabelStyle>
         <Thumbnail
@@ -45,13 +47,18 @@ import { ContentPreviewPriceSale } from './ContentPreviewContents/ContentPreview
     </ContentPreview>
     </ContentPreview.Wrap>
  */
-const ContentPreview = (props: componentPropsType.ComponentBaseProps<{ href?: string | UrlObject }>) => {
-  const { children, href } = props;
-  const { variant } = useContentPreviewWrapContext();
-
+const ContentPreview = ({
+  children,
+  href,
+  variant = 'list',
+  ...props
+}: componentPropsType.ComponentBaseProps<ContentPreviewProps & { href?: string | UrlObject }>) => {
   return (
-    <li className={`${baseContentPreviewStyle} ${contentPreviewStyle[variant]}`} {...props}>
-      {(href && <Link href={href}>{children}</Link>) || <>{children}</>}
+    <li className={`${baseContentPreviewStyle} ${contentPreviewStyle({ variant })}`} {...props}>
+      {/* {(href && <Link href={href}>{children}</Link>) || <>{children}</>} */}
+      {(href && <Link href={href}>{setChildrenWithProps(children, { variant })}</Link>) || (
+        <>{setChildrenWithProps(children, { variant })}</>
+      )}
     </li>
   );
 };

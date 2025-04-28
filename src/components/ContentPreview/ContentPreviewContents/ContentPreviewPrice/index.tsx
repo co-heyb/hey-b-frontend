@@ -1,13 +1,16 @@
-'use client';
 import { componentPropsType } from '@/types';
 import { baseContentPreviewPriceStyle, contentPreviewPriceStyle } from '../../ContentPreview.css';
-import { useContentPreviewWrapContext } from '../../ContentPreviewWrap';
 import { ContentPreviewPriceSale } from './ContentPreviewPriceSale';
+import { ContentPreviewProps } from '../..';
 
-const ContentPreviewPrice = ({ children, ...props }: componentPropsType.ComponentBaseProps) => {
-  const { variant } = useContentPreviewWrapContext();
+const ContentPreviewPrice = ({
+  children,
+  variant = 'list',
+  ...props
+}: componentPropsType.ComponentBaseProps<ContentPreviewProps>) => {
+  // const { variant } = useContentPreviewWrapContext();
   return (
-    <span className={`${baseContentPreviewPriceStyle} ${contentPreviewPriceStyle[variant]}`} {...props}>
+    <span className={`${baseContentPreviewPriceStyle} ${contentPreviewPriceStyle}`} {...props}>
       {children}
     </span>
   );

@@ -1,5 +1,3 @@
-'use client';
-
 import { componentPropsType } from '@/types';
 import { contentPreviewPriceSaleStyle } from '../../ContentPreview.css';
 

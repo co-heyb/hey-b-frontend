@@ -31,14 +31,16 @@ export const sectionContentStyle = style({
   display: 'flex',
   padding: pxToVw([4, 16, 16]),
   selectors: {
-    ['&.slide-section']: {
+    ['&.no-padding-x']: {
+      paddingLeft: pxToVw(0),
       paddingRight: pxToVw(0),
     },
   },
   '@media': {
     [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
       selectors: {
-        ['&.slide-section']: {
+        ['&.no-padding-x']: {
+          paddingLeft: pxToVw(0),
           paddingRight: pxToVw(0),
         },
       },
@@ -46,7 +48,8 @@ export const sectionContentStyle = style({
     },
     [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
       selectors: {
-        ['&.slide-section']: {
+        ['&.no-padding-x']: {
+          paddingLeft: pxToVw(0),
           paddingRight: pxToVw(0),
         },
       },
@@ -54,7 +57,8 @@ export const sectionContentStyle = style({
     },
     [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
       selectors: {
-        ['&.slide-section']: {
+        ['&.no-padding-x']: {
+          paddingLeft: pxToVw(0),
           paddingRight: pxToVw(0),
         },
       },

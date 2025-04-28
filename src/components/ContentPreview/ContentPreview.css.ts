@@ -1,6 +1,7 @@
 import { vars } from '@/styles/theme.css';
 import { style, styleVariants } from '@vanilla-extract/css';
 import { DESKTOP_BREAKPOINT, MOBILE_LARGE_BREAKPOINT, pxToVw, TABLET_BREAKPOINT } from '@/styles/px-to-vw.css';
+import { recipe, RecipeVariants } from '@vanilla-extract/recipes';
 
 export const baseContentPreviewWrapStyle = style({
   boxSizing: 'border-box',
@@ -19,30 +20,6 @@ export const baseContentPreviewWrapStyle = style({
   },
 });
 
-export const contentPreviewWrapStyle = styleVariants({
-  list: {},
-  slide: {
-    display: 'flex',
-    overflowX: 'auto',
-    padding: pxToVw([0, 16, 20]),
-    '@media': {
-      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        padding: pxToVw([0, 16, 20], MOBILE_LARGE_BREAKPOINT),
-      },
-      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        padding: pxToVw([0, 16, 20], TABLET_BREAKPOINT),
-      },
-      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        padding: pxToVw([0, 16, 20], DESKTOP_BREAKPOINT),
-      },
-    },
-  },
-  column: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    overflowY: 'auto',
-  },
-});
 export const contentPreviewContentsStyle = style({
   width: '70%',
   flexShrink: 0,
@@ -95,124 +72,157 @@ export const baseContentPreviewStyle = style({
     },
   },
 });
-export const contentPreviewStyle = styleVariants({
-  list: {
-    display: 'flex',
-    gap: pxToVw(10),
-    padding: pxToVw([20, 0]),
-    minHeight: pxToVw(112),
-    borderTop: `1px solid ${vars.colors.background}`,
-    borderBottom: `1px solid ${vars.colors.background}`,
-    selectors: {
-      [' &:last-of-type']: {
-        borderBottom: 'none',
-      },
+export const contentPreviewStyle = recipe({
+  base: baseContentPreviewStyle,
+  variants: {
+    variant: {
+      list: {
+        display: 'flex',
+        gap: pxToVw(10),
+        padding: pxToVw([20, 0]),
+        minHeight: pxToVw(112),
+        borderTop: `1px solid ${vars.colors.background}`,
+        borderBottom: `1px solid ${vars.colors.background}`,
+        selectors: {
+          [' &:last-of-type']: {
+            borderBottom: 'none',
+          },
 
-      ['& + &']: {
-        marginTop: '-1px',
-      },
-    },
-    '@media': {
-      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        gap: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
-        padding: pxToVw([20, 0], MOBILE_LARGE_BREAKPOINT),
-        minHeight: pxToVw(112, MOBILE_LARGE_BREAKPOINT),
-        ['& + &']: {
-          marginTop: pxToVw(-1, MOBILE_LARGE_BREAKPOINT),
+          ['& + &']: {
+            marginTop: '-1px',
+          },
+        },
+        '@media': {
+          [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+            gap: pxToVw(10, MOBILE_LARGE_BREAKPOINT),
+            padding: pxToVw([20, 0], MOBILE_LARGE_BREAKPOINT),
+            minHeight: pxToVw(112, MOBILE_LARGE_BREAKPOINT),
+            ['& + &']: {
+              marginTop: pxToVw(-1, MOBILE_LARGE_BREAKPOINT),
+            },
+          },
+          [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+            gap: pxToVw(10, TABLET_BREAKPOINT),
+            padding: pxToVw([20, 0], TABLET_BREAKPOINT),
+            minHeight: pxToVw(112, TABLET_BREAKPOINT),
+            ['& + &']: {
+              marginTop: pxToVw(-1, MOBILE_LARGE_BREAKPOINT),
+            },
+          },
+          [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+            gap: pxToVw(10, DESKTOP_BREAKPOINT),
+            padding: pxToVw([20, 0], DESKTOP_BREAKPOINT),
+            minHeight: pxToVw(112, DESKTOP_BREAKPOINT),
+            ['& + &']: {
+              marginTop: pxToVw(-1, MOBILE_LARGE_BREAKPOINT),
+            },
+          },
         },
       },
-      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        gap: pxToVw(10, TABLET_BREAKPOINT),
-        padding: pxToVw([20, 0], TABLET_BREAKPOINT),
-        minHeight: pxToVw(112, TABLET_BREAKPOINT),
-        ['& + &']: {
-          marginTop: pxToVw(-1, MOBILE_LARGE_BREAKPOINT),
+      slide: {
+        width: '40%',
+        selectors: {
+          ['& + &']: {
+            marginTop: 0,
+          },
+        },
+        '@media': {
+          [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+            selectors: {
+              ['& + &']: {
+                marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+              },
+            },
+          },
+          [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+            width: '28%',
+            selectors: {
+              ['& + &']: {
+                marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+              },
+            },
+          },
+          [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+            width: '22%',
+            selectors: {
+              ['& + &']: {
+                marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+              },
+            },
+          },
         },
       },
-      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        gap: pxToVw(10, DESKTOP_BREAKPOINT),
-        padding: pxToVw([20, 0], DESKTOP_BREAKPOINT),
-        minHeight: pxToVw(112, DESKTOP_BREAKPOINT),
-        ['& + &']: {
-          marginTop: pxToVw(-1, MOBILE_LARGE_BREAKPOINT),
+      column: {
+        boxSizing: 'border-box',
+        width: `calc(50% - ${pxToVw(6)})`,
+        marginBottom: pxToVw(28),
+        selectors: {
+          ['& + &']: {
+            marginTop: 0,
+          },
+        },
+        '@media': {
+          [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+            width: `calc(50% - ${pxToVw(6, MOBILE_LARGE_BREAKPOINT)})`,
+            marginBottom: pxToVw(28, MOBILE_LARGE_BREAKPOINT),
+            selectors: {
+              ['& + &']: {
+                marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+              },
+            },
+          },
+          [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+            width: `calc(33.3% - ${pxToVw(8, TABLET_BREAKPOINT)})`,
+            marginBottom: pxToVw(28, TABLET_BREAKPOINT),
+            selectors: {
+              ['& + &']: {
+                marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+              },
+            },
+          },
+          [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+            width: `calc(25% - ${pxToVw(9, DESKTOP_BREAKPOINT)})`,
+            marginBottom: pxToVw(28, DESKTOP_BREAKPOINT),
+            selectors: {
+              ['& + &']: {
+                marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+              },
+            },
+          },
         },
       },
     },
   },
-  slide: {
-    width: '40%',
-    selectors: {
-      ['& + &']: {
-        marginTop: 0,
-      },
-    },
-    '@media': {
-      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        selectors: {
-          ['& + &']: {
-            marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-          },
-        },
-      },
-      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        width: '28%',
-        selectors: {
-          ['& + &']: {
-            marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-          },
-        },
-      },
-      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        width: '22%',
-        selectors: {
-          ['& + &']: {
-            marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-          },
-        },
-      },
-    },
-  },
-  column: {
-    boxSizing: 'border-box',
-    width: `calc(50% - ${pxToVw(6)})`,
-    marginBottom: pxToVw(28),
-    selectors: {
-      ['& + &']: {
-        marginTop: 0,
-      },
-    },
-    '@media': {
-      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        width: `calc(50% - ${pxToVw(6, MOBILE_LARGE_BREAKPOINT)})`,
-        marginBottom: pxToVw(28, MOBILE_LARGE_BREAKPOINT),
-        selectors: {
-          ['& + &']: {
-            marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-          },
-        },
-      },
-      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        width: `calc(33.3% - ${pxToVw(8, TABLET_BREAKPOINT)})`,
-        marginBottom: pxToVw(28, TABLET_BREAKPOINT),
-        selectors: {
-          ['& + &']: {
-            marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-          },
-        },
-      },
-      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        width: `calc(25% - ${pxToVw(9, DESKTOP_BREAKPOINT)})`,
-        marginBottom: pxToVw(28, DESKTOP_BREAKPOINT),
-        selectors: {
-          ['& + &']: {
-            marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-          },
-        },
-      },
-    },
+  defaultVariants: {
+    variant: 'list',
   },
 });
 
+export const contentPreviewWrapStyle = style({
+  selectors: {
+    [`&:has(${contentPreviewStyle({ variant: 'slide' }).split(' ').at(-1)})`]: {
+      display: 'flex',
+      overflowX: 'auto',
+      padding: pxToVw([0, 16, 20]),
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          padding: pxToVw([0, 16, 20], MOBILE_LARGE_BREAKPOINT),
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          padding: pxToVw([0, 16, 20], TABLET_BREAKPOINT),
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          padding: pxToVw([0, 16, 20], DESKTOP_BREAKPOINT),
+        },
+      },
+    },
+    [`&:has(${contentPreviewStyle({ variant: 'column' }).split(' ').at(-1)})`]: {
+      display: 'flex',
+      flexWrap: 'wrap',
+      overflowY: 'auto',
+    },
+  },
+});
 export const contentPreviewActionsStyle = style({
   position: 'absolute',
   bottom: 0,
@@ -255,23 +265,23 @@ export const baseContentPreviewTitleStyle = style({
   },
 });
 
-export const contentPreviewTitleStyle = styleVariants({
-  list: {
-    marginTop: '0',
-    '@media': {
-      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
-      },
-      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        marginTop: pxToVw(0, TABLET_BREAKPOINT),
-      },
-      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        marginTop: pxToVw(0, DESKTOP_BREAKPOINT),
+export const contentPreviewTitleStyle = style({
+  selectors: {
+    [`${contentPreviewStyle({ variant: 'list' }).split(' ').at(-1)} &`]: {
+      marginTop: '0',
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          marginTop: pxToVw(0, MOBILE_LARGE_BREAKPOINT),
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          marginTop: pxToVw(0, TABLET_BREAKPOINT),
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          marginTop: pxToVw(0, DESKTOP_BREAKPOINT),
+        },
       },
     },
   },
-  slide: {},
-  column: {},
 });
 
 export const baseContentPreviewDescStyle = style({
@@ -295,23 +305,23 @@ export const baseContentPreviewDescStyle = style({
   },
 });
 
-export const contentPreviewDescStyle = styleVariants({
-  list: {},
-  slide: {
-    marginTop: pxToVw(4),
-    '@media': {
-      [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
-        marginTop: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
-      },
-      [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
-        marginTop: pxToVw(4, TABLET_BREAKPOINT),
-      },
-      [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
-        marginTop: pxToVw(4, DESKTOP_BREAKPOINT),
+export const contentPreviewDescStyle = style({
+  selectors: {
+    [`${contentPreviewStyle({ variant: 'slide' }).split(' ').at(-1)} &`]: {
+      marginTop: pxToVw(4),
+      '@media': {
+        [`(min-width: ${MOBILE_LARGE_BREAKPOINT}px)`]: {
+          marginTop: pxToVw(4, MOBILE_LARGE_BREAKPOINT),
+        },
+        [`(min-width: ${TABLET_BREAKPOINT}px)`]: {
+          marginTop: pxToVw(4, TABLET_BREAKPOINT),
+        },
+        [`(min-width: ${DESKTOP_BREAKPOINT}px)`]: {
+          marginTop: pxToVw(4, DESKTOP_BREAKPOINT),
+        },
       },
     },
   },
-  column: {},
 });
 
 export const baseContentPreviewPriceStyle = style({
@@ -335,10 +345,10 @@ export const baseContentPreviewPriceStyle = style({
     },
   },
 });
-export const contentPreviewPriceStyle = styleVariants({
-  list: {},
-  slide: {},
-  column: {},
+export const contentPreviewPriceStyle = style({
+  // list: {},
+  // slide: {},
+  // column: {},
 });
 
 export const contentPreviewPriceSaleStyle = style({
@@ -356,3 +366,4 @@ export const contentPreviewPriceSaleStyle = style({
     },
   },
 });
+export type ContentPreviewStyleVariants = RecipeVariants<typeof contentPreviewStyle>;
