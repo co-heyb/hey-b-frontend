@@ -11,13 +11,13 @@ export default function Home() {
       <Banner />
       <Section>
         <Section.Header href={'/community'}>나는 어떤 취미가 잘 맞을까?</Section.Header>
-        <Section.Content className="slide-section">
+        <Section.Content className="no-padding-x">
           <FindHobby />
         </Section.Content>
       </Section>
       <Section>
         <Section.Header href={'/course'}>초보부터 고수까지, 맞춤형 취미 코스</Section.Header>
-        <Section.Content className="slide-section">
+        <Section.Content className="no-padding-x">
           <HobbyCourse />
         </Section.Content>
       </Section>
